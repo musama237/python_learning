@@ -12,6 +12,11 @@ Example:
     bus.on("greet", lambda name: results.append(f"Hello {name}"))
     bus.emit("greet", "Alice")
     results -> ["Hello Alice"]
+
+Hints:
+    1. Store callbacks in dict of {event: [callbacks]}
+    2. emit iterates and calls each
+    3. once wraps callback to auto-unsubscribe
 """
 
 

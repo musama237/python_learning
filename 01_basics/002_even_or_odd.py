@@ -8,6 +8,11 @@ Write a function that returns "even" if a number is even, "odd" if odd.
 Example:
     even_or_odd(4) -> "even"
     even_or_odd(7) -> "odd"
+
+Hints:
+    1. What does the remainder of a division tell you about a number?
+    2. The modulo operator (%) gives the remainder — even numbers have remainder 0 when divided by 2.
+    3. Check if n % 2 == 0 and return "even" or "odd" accordingly.
 """
 
 

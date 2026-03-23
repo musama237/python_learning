@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: PyTorch, nn.Module, Training Loop
 
 Build and train neural networks the PyTorch way.
+
+Hints:
+    1. Define layers in __init__ using nn.Linear and nn.ReLU; chain them in forward()
+    2. Use nn.Sequential to build simple layer stacks without writing a custom forward()
+    3. Use BCELoss for binary classification when output has a sigmoid activation
 """
 
 import torch

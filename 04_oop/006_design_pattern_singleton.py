@@ -10,6 +10,11 @@ Example:
     a = Singleton()
     b = Singleton()
     a is b -> True
+
+Hints:
+    1. Override __new__
+    2. Check if instance exists (cls._instance)
+    3. Factory uses dict mapping type string to class
 """
 
 

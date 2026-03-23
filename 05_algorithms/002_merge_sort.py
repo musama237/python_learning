@@ -8,6 +8,11 @@ Split the array in half, sort each half, then merge.
 
 Example:
     merge_sort([38, 27, 43, 3, 9, 82, 10]) -> [3, 9, 10, 27, 38, 43, 82]
+
+Hints:
+    1. Split the array in half recursively until each piece has 0 or 1 elements
+    2. Merge two sorted halves by comparing their front elements
+    3. Use two pointers, one for each half, advancing whichever points to the smaller element
 """
 
 

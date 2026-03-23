@@ -7,6 +7,11 @@ Solve each function using a SINGLE list comprehension (one line).
 
 Example:
     squares(5) -> [0, 1, 4, 9, 16]
+
+Hints:
+    1. List comprehensions follow the pattern: [expression for item in iterable].
+    2. You can add an if-condition to filter, and nest for-loops to flatten.
+    3. For filtering: [expr for x in iterable if condition]. For flattening 2D: [item for row in matrix for item in row].
 """
 
 

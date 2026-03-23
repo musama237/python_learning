@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Clustering, Unsupervised Learning
 
 Implement K-Means clustering algorithm.
+
+Hints:
+    1. Initialize centroids by randomly selecting k data points from the dataset
+    2. Assign each point to its nearest centroid using argmin of distances
+    3. Update each centroid as the mean of all points assigned to it; repeat until convergence
 """
 
 import numpy as np

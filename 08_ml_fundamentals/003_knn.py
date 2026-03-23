@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Distance Metrics, Classification
 
 Implement KNN for classification and regression.
+
+Hints:
+    1. Compute Euclidean distances from the query point to all training points
+    2. Use argsort to find the k nearest neighbors by index
+    3. For classification use majority vote (Counter.most_common); for regression take the mean of k neighbors
 """
 
 import numpy as np

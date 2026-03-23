@@ -11,6 +11,11 @@ Solve classic DP problems:
 Example:
     climb_stairs(5) -> 8
     coin_change([1, 5, 10], 11) -> 2 (10+1)
+
+Hints:
+    1. Climbing stairs: dp[i] = dp[i-1] + dp[i-2] (like Fibonacci)
+    2. Coin change: dp[amount] = min(dp[amount - coin] + 1) for each coin
+    3. LCS: build a 2D table where matching characters extend the diagonal value by 1
 """
 
 

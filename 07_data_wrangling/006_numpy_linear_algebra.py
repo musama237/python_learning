@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: NumPy, Linear Algebra, Matrix Operations
 
 Implement linear algebra operations from scratch (no np.linalg where noted).
+
+Hints:
+    1. Matrix multiply: sum over shared dimension using broadcasting
+    2. np.linalg.eigh for symmetric matrices
+    3. PCA: center, covariance, eigendecompose, project onto top-k
 """
 
 import numpy as np

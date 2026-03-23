@@ -4,6 +4,12 @@ Difficulty: ⭐⭐ Medium
 Topic: regex, Pattern Matching, Text Processing
 
 Write functions that use regex to solve text processing problems.
+
+Hints:
+    1. Use re.match for validating full strings and re.findall for extracting all matches
+    2. Use capturing groups () to extract specific parts of a match
+    3. re.sub with a callback or pattern is useful for replacements like masking credit cards
+    4. Use (?i) flag or re.IGNORECASE for case-insensitive matching of repeated words
 """
 
 import re

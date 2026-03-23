@@ -13,6 +13,11 @@ Example:
 
     add(1)(2)(3) -> 6
     add(1, 2)(3) -> 6
+
+Hints:
+    1. Currying transforms f(a, b, c) into f(a)(b)(c) -- you need to collect arguments until you have enough.
+    2. Use inspect.signature to count how many args the function expects. Return a new function that accumulates args until enough are collected.
+    3. Inside curry, define an inner function that takes *args, appends to accumulated args, and if len(accumulated) >= expected param count calls the original func, otherwise returns another accumulating function.
 """
 
 import inspect

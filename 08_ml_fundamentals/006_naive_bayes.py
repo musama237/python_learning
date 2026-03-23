@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Probability, Bayes Theorem
 
 Implement Gaussian Naive Bayes classifier.
+
+Hints:
+    1. P(class|X) is proportional to P(class) * product(P(x_i|class)) for each feature
+    2. Use the Gaussian PDF for continuous features: (1/sqrt(2*pi*var)) * exp(-(x-mean)^2 / (2*var))
+    3. Predict by taking argmax over classes of the log-posterior (use log to avoid underflow)
 """
 
 import numpy as np

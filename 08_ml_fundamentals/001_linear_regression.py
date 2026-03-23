@@ -12,6 +12,11 @@ Steps:
 3. Compute MSE loss
 4. Compute gradients
 5. Update parameters
+
+Hints:
+    1. Forward pass is simply X @ w + b
+    2. Loss is mean((y_pred - y)^2); gradients are dw = X.T @ (y_pred - y) / n, db = mean(y_pred - y)
+    3. Update weights with w -= lr * dw and bias with b -= lr * db each iteration
 """
 
 import numpy as np

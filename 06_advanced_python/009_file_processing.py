@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: pathlib, File I/O, CSV, JSON
 
 Process files efficiently using pathlib and standard library.
+
+Hints:
+    1. Path.read_text().splitlines() gives you lines without reading line-by-line
+    2. Use csv.DictReader to automatically map CSV rows to dicts using the header
+    3. Path.rglob("*.txt") recursively finds all .txt files in a directory tree
 """
 
 from pathlib import Path

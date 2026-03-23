@@ -14,6 +14,11 @@ Example:
     }
     bfs(graph, 'A') -> ['A', 'B', 'C', 'D']
     dfs(graph, 'A') -> ['A', 'B', 'D', 'C']
+
+Hints:
+    1. BFS uses a queue (deque), DFS uses a stack (or recursion)
+    2. Always track a visited set to avoid revisiting nodes in graphs with cycles
+    3. For shortest path, track the parent of each node during BFS and reconstruct the path backward
 """
 
 from collections import deque

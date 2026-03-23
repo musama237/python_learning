@@ -13,6 +13,11 @@ Example:
     s.peek()  -> 2
     s.pop()   -> 2
     s.size()  -> 1
+
+Hints:
+    1. Think about which built-in Python data structure naturally supports LIFO behavior.
+    2. A list works perfectly — append() adds to top, pop() removes from top, [-1] peeks.
+    3. Store items in a list internally; use len() for size, check length for is_empty, and raise IndexError when operating on an empty stack.
 """
 
 

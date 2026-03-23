@@ -11,6 +11,11 @@ Example:
     acc = BankAccount("Alice", 100)
     acc.deposit(50)
     acc.balance -> 150
+
+Hints:
+    1. Store owner/balance as self attributes
+    2. Check amount > 0 before deposit/withdraw
+    3. Check balance >= amount before withdraw
 """
 
 

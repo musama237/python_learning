@@ -10,6 +10,11 @@ Sort the groups by their first element.
 Example:
     group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
     -> [["ate", "eat", "tea"], ["bat"], ["nat", "tan"]]
+
+Hints:
+    1. Anagrams share the same letters — how could you create a common identifier for them?
+    2. Sorting a word's characters gives a canonical key (e.g., sorted("eat") -> "aet").
+    3. Use a dict with the sorted-character tuple/string as key; append each word to its group, then sort and return the groups.
 """
 
 

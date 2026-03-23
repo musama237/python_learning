@@ -5,6 +5,12 @@ Topic: Matplotlib, Data Viz, Statistics
 
 Write functions that create publication-quality plots.
 Each function should save the plot and return the figure.
+
+Hints:
+    1. plt.hist() for distribution plots
+    2. plt.imshow() for heatmap visualization
+    3. plt.plot() for training curves
+    4. fig.savefig(path) to save; always plt.close(fig) when done
 """
 
 import matplotlib

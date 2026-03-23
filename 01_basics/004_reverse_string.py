@@ -8,6 +8,11 @@ Use a loop.
 
 Example:
     reverse_string("hello") -> "olleh"
+
+Hints:
+    1. Think about building a new string one character at a time from the original.
+    2. You can iterate backwards through indices using range(len(s) - 1, -1, -1).
+    3. Start with an empty string, loop from the last index to 0, and concatenate each character.
 """
 
 

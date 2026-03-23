@@ -7,6 +7,12 @@ Solve each using itertools functions. Import what you need.
 
 Example:
     running_totals([1, 2, 3, 4]) -> [1, 3, 6, 10]
+
+Hints:
+    1. Use accumulate for running totals — it yields cumulative results by default
+    2. chain.from_iterable flattens one level of nesting without unpacking
+    3. groupby groups consecutive equal elements — perfect for group_consecutive
+    4. Build the powerset by combining combinations of every possible length
 """
 
 import itertools

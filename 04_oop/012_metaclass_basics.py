@@ -12,6 +12,11 @@ Example:
     class Dog(Animal): pass
     class Cat(Animal): pass
     Animal.registry -> {'Dog': Dog, 'Cat': Cat}
+
+Hints:
+    1. __new__ in metaclass runs at class creation
+    2. Add registry dict to base class
+    3. Check methods for __doc__ attribute
 """
 
 

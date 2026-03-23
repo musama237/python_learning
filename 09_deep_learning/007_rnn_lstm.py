@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: PyTorch, RNN, LSTM, Sequence Models
 
 Build RNN/LSTM models for sequence data.
+
+Hints:
+    1. RNN update rule: h_t = tanh(W_ih @ x_t + W_hh @ h_{t-1} + bias); loop over the sequence length
+    2. For the LSTM classifier, use nn.LSTM and take the last hidden state for classification
+    3. Initialize hidden state as zeros with shape (batch_size, hidden_size)
 """
 
 import torch

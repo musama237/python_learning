@@ -5,6 +5,10 @@ Topic: typing, Protocol, Generic, TypeVar
 
 Use advanced type hints to create well-typed code.
 All code should pass mypy strict checking.
+
+Hints:
+    1. For SortedList: use the bisect module to find the O(log n) insertion point
+    2. For Result: store both value and error, then check which one is set for is_ok/unwrap
 """
 
 from typing import TypeVar, Generic, Protocol, runtime_checkable

@@ -9,6 +9,11 @@ Topic: Arrays, Two Pointers, Sliding Window
 
 Example:
     max_sum_subarray([2, 1, 5, 1, 3, 2], 3) -> 9
+
+Hints:
+    1. Fixed window: add the new right element and remove the old left element as the window slides
+    2. Variable window: expand right to include more; shrink left when the window condition breaks
+    3. For minimum window substring, use a character frequency map and track how many required chars are satisfied
 """
 
 

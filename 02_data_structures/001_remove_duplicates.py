@@ -8,6 +8,11 @@ Do NOT use dict.fromkeys() or set — use a loop.
 
 Example:
     remove_duplicates([1, 2, 2, 3, 1, 4]) -> [1, 2, 3, 4]
+
+Hints:
+    1. Think about how you could remember which items you've already encountered.
+    2. A set gives O(1) lookup — use it to track what you've already seen.
+    3. Iterate through the list; for each element, if it's not in your "seen" set, add it to the result and the set.
 """
 
 

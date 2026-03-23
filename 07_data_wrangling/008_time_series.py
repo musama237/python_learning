@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: Pandas, Time Series, Resampling
 
 Work with time series data using Pandas.
+
+Hints:
+    1. dt accessor for date parts (df.date.dt.year, .dt.month, etc.)
+    2. resample().agg({'price': ['first','max','min','last']}) for OHLCV
+    3. rolling mean +/- n*rolling std for anomaly detection
 """
 
 import pandas as pd

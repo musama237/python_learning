@@ -11,6 +11,11 @@ Example:
     trie.search("apple") -> True
     trie.starts_with("app") -> True
     trie.autocomplete("app") -> ["apple"]
+
+Hints:
+    1. Each node has a children dict mapping char to TrieNode
+    2. Insert: walk the trie creating nodes as needed; mark the last node as end-of-word
+    3. Autocomplete: find the node at the end of the prefix, then DFS to collect all words below it
 """
 
 

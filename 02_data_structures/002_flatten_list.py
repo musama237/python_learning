@@ -7,6 +7,11 @@ Flatten a nested list of arbitrary depth into a single flat list.
 
 Example:
     flatten([1, [2, [3, 4], 5], 6]) -> [1, 2, 3, 4, 5, 6]
+
+Hints:
+    1. Not every element is the same type — some are lists themselves.
+    2. Use isinstance(element, list) to check if an element needs further flattening.
+    3. For each element: if it's a list, recursively flatten it and extend your result; otherwise, append it directly.
 """
 
 

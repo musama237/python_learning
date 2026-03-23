@@ -11,6 +11,11 @@ Example:
     counter = ThreadSafeCounter()
     # 10 threads each incrementing 1000 times
     # counter.value should be exactly 10000
+
+Hints:
+    1. Use threading.Lock() to protect shared state in the counter's increment/decrement
+    2. ThreadPoolExecutor.map preserves input order — use it for parallel_map
+    3. Use a Condition variable for the bounded queue to wait/notify on put and get
 """
 
 import threading

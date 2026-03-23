@@ -10,6 +10,11 @@ Starts with 0, 1.
 Example:
     fibonacci(5) -> [0, 1, 1, 2, 3]
     fibonacci(1) -> [0]
+
+Hints:
+    1. Each Fibonacci number depends on the two numbers before it — think about what state you need to track.
+    2. Keep two variables for the previous two values. Handle edge cases for n=0 (empty list) and n=1 ([0]).
+    3. Start a list with [0, 1], then loop from index 2 to n, appending the sum of the last two elements each time.
 """
 
 

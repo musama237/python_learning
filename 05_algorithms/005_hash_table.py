@@ -10,6 +10,11 @@ Example:
     ht = HashTable()
     ht.put("name", "Alice")
     ht.get("name") -> "Alice"
+
+Hints:
+    1. Use hash(key) % capacity to compute the bucket index
+    2. Each bucket is a list of (key, value) pairs to handle collisions via chaining
+    3. On put, scan the bucket for an existing key to update; otherwise append a new pair
 """
 
 

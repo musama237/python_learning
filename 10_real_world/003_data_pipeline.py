@@ -4,6 +4,12 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: ETL, Pipeline Pattern, Data Processing
 
 Build a composable data pipeline framework for ETL operations.
+
+Hints:
+    1. Store steps as list of Step objects
+    2. run() loops through steps passing data forward
+    3. Wrap each step in try/except
+    4. error_handler receives (exception, current_data) and returns recovery data
 """
 
 from typing import Any, Callable

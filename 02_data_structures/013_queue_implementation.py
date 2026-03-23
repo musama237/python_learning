@@ -12,6 +12,11 @@ Example:
     q.enqueue(2)
     q.peek()     -> 1
     q.dequeue()  -> 1
+
+Hints:
+    1. A queue is FIFO — first in, first out. Think about which end to add and which to remove.
+    2. A list can work: append() to enqueue at the end, pop(0) to dequeue from the front.
+    3. Store items in a list; use append for enqueue, pop(0) for dequeue, [0] for peek, and raise IndexError when empty. For better performance, consider collections.deque.
 """
 
 

@@ -8,6 +8,11 @@ Topic: Decorators, Higher-Order Functions
 
 The timer decorator should add an attribute 'last_time' to the function.
 The logger should store logs in a list attribute 'logs' on the function.
+
+Hints:
+    1. A decorator is a function that takes a function and returns a new wrapper function that adds behavior.
+    2. Use functools.wraps on your wrapper; you can store state as attributes on the wrapper function itself (e.g., wrapper.logs = []).
+    3. For logger: define wrapper(*args, **kwargs), format args into a string, append to wrapper.logs, then call and return func(*args, **kwargs). For timer: record time.time() before and after the call, store the difference in wrapper.last_time.
 """
 
 import time

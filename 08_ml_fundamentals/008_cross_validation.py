@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Evaluation, Train/Test Split
 
 Implement model evaluation tools from scratch.
+
+Hints:
+    1. Shuffle indices, then split into k equal-sized folds; for each fold use it as test, rest as train
+    2. For confusion matrix, compare predictions vs true labels element-wise to count TP, TN, FP, FN
+    3. Precision = TP/(TP+FP), recall = TP/(TP+FN), F1 = 2*precision*recall/(precision+recall)
 """
 
 import numpy as np

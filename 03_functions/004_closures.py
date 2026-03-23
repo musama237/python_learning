@@ -15,6 +15,11 @@ Example:
 
     double = make_multiplier(2)
     double(5) -> 10
+
+Hints:
+    1. The inner function can "see" variables from the outer function's scope -- that's the closure.
+    2. To modify a captured variable (like a counter), you need the nonlocal keyword or a mutable container like a list.
+    3. For make_counter: use nonlocal to increment start (or a list [start]) inside the inner function; for make_multiplier: just return lambda x: x * factor.
 """
 
 

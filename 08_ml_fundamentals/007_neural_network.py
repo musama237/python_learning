@@ -10,6 +10,11 @@ Implement a simple feedforward neural network with:
 - Backpropagation
 
 No PyTorch or TensorFlow — NumPy only!
+
+Hints:
+    1. Forward: apply weights+bias then activation layer by layer; use ReLU for hidden layers, sigmoid for output
+    2. Backward: use the chain rule from the output layer back; delta = (a - y) for output, propagate through layers
+    3. Clip sigmoid inputs and log arguments for numerical stability
 """
 
 import numpy as np

@@ -5,6 +5,11 @@ Topic: Optimization, SGD, Momentum, Adam
 
 Implement different gradient descent optimizers.
 Test them on a simple quadratic function: f(x) = sum(x^2)
+
+Hints:
+    1. SGD: simply w -= lr * grad
+    2. Momentum: maintain velocity v = momentum*v - lr*grad, then w += v
+    3. Adam: track first moment (m) and second moment (v), apply bias correction, then update w -= lr * m_hat / (sqrt(v_hat) + epsilon)
 """
 
 import numpy as np

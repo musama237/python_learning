@@ -11,6 +11,11 @@ Example:
     list(islice(fib_generator(), 7)) -> [0, 1, 1, 2, 3, 5, 8]
     list(prime_generator(20)) -> [2, 3, 5, 7, 11, 13, 17, 19]
     list(chunked([1,2,3,4,5], 2)) -> [[1,2], [3,4], [5]]
+
+Hints:
+    1. Use yield instead of return -- each yield produces the next value in the sequence.
+    2. For fibonacci, keep two variables a, b and yield a, then update a, b = b, a+b. For chunked, slice the list in steps of n.
+    3. fib: while True: yield a; a, b = b, a+b (start with a=0, b=1). chunked: for i in range(0, len(lst), n): yield lst[i:i+n]. primes: loop from 2 to limit, check divisibility.
 """
 
 from itertools import islice

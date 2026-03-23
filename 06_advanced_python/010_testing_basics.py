@@ -9,6 +9,11 @@ This challenge teaches you to think about testability.
 1. Refactor tightly-coupled code to use dependency injection.
 2. Write a test double (fake) for an external service.
 3. Implement a simple test runner.
+
+Hints:
+    1. FakeWeatherService: store the data dict and return values from it in get_temperature
+    2. WeatherAdvisor: get the temperature then use if/elif thresholds to pick advice
+    3. SimpleTestRunner: wrap each test call in try/except AssertionError to catch failures
 """
 
 

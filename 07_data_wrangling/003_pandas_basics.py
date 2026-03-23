@@ -4,6 +4,12 @@ Difficulty: ⭐ Easy
 Topic: Pandas, DataFrames, Series
 
 Solve each using Pandas operations.
+
+Hints:
+    1. pd.DataFrame(dict) to create
+    2. df[df.col >= val].sort_values() for filtering and sorting
+    3. df.apply or np.where for conditional column
+    4. groupby().agg() for group statistics
 """
 
 import pandas as pd

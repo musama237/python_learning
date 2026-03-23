@@ -15,6 +15,11 @@ Example:
         'D': []
     }
     dijkstra(graph, 'A') -> {'A': 0, 'B': 1, 'C': 3, 'D': 4}
+
+Hints:
+    1. Use a min-heap (heapq) seeded with (0, start); greedily visit the closest unvisited node
+    2. For each visited node, update its neighbors if a shorter path is found through the current node
+    3. Skip nodes already finalized (already popped with a shorter distance); track parents to reconstruct paths
 """
 
 import heapq

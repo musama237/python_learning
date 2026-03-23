@@ -10,6 +10,11 @@ Example:
     is_palindrome("racecar") -> True
     is_palindrome("A man, a plan, a canal: Panama") -> True
     is_palindrome("hello") -> False
+
+Hints:
+    1. Before comparing, you need to clean the string — remove non-alphanumeric characters and normalize case.
+    2. Use str.isalnum() to filter characters and str.lower() to normalize. Then compare the cleaned string to its reverse.
+    3. Build a cleaned string with only lowercase alphanumeric chars, then check if cleaned == cleaned[::-1].
 """
 
 

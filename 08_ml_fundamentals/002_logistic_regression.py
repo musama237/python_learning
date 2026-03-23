@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Classification, Sigmoid, Cross-Entropy
 
 Implement binary logistic regression with gradient descent.
+
+Hints:
+    1. Sigmoid is 1/(1+exp(-z)); clip z to avoid overflow (e.g., np.clip(z, -500, 500))
+    2. Loss is -mean(y*log(p) + (1-y)*log(1-p)); clip p away from 0 and 1 for stability
+    3. Gradients have the same shape as linear regression but use sigmoid output: dw = X.T @ (p - y) / n
 """
 
 import numpy as np

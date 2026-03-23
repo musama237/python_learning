@@ -9,6 +9,11 @@ Topic: DP, Knapsack, Subsequences
 
 Example:
     knapsack(capacity=7, weights=[1,3,4,5], values=[1,4,5,7]) -> 9
+
+Hints:
+    1. Knapsack: build a 2D table dp[item][capacity] deciding to include or skip each item
+    2. LIS: dp[i] = length of longest increasing subsequence ending at index i; check all j < i
+    3. Edit distance: build a 2D table where each cell considers insert, delete, or replace operations
 """
 
 

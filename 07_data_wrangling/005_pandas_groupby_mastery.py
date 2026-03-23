@@ -4,6 +4,12 @@ Difficulty: ⭐⭐ Medium
 Topic: Pandas, GroupBy, Aggregation, Transform
 
 Master the groupby operation — the most powerful Pandas tool.
+
+Hints:
+    1. groupby().agg() with named aggregations for multi_agg
+    2. groupby().rank(ascending=False) for ranking within groups
+    3. groupby().cumsum() for cumulative totals per group
+    4. groupby().apply(lambda g: g.nlargest(n)) for top-n per group
 """
 
 import pandas as pd

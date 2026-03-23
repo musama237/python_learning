@@ -12,6 +12,11 @@ Example:
 
     c = Cycle([1, 2, 3])
     [next(c) for _ in range(7)] -> [1, 2, 3, 1, 2, 3, 1]
+
+Hints:
+    1. __iter__ returns self or a new iterator
+    2. __next__ returns next value or raises StopIteration
+    3. Range: track current position
 """
 
 

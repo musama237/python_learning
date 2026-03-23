@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: PyTorch, Automatic Differentiation, Gradients
 
 Understand how autograd works — the engine behind neural network training.
+
+Hints:
+    1. Set requires_grad=True on tensors you want to differentiate with respect to
+    2. Call .backward() on a scalar loss to compute gradients, then access them via the .grad attribute
+    3. Use optimizer.zero_grad() before each backward pass to clear accumulated gradients
 """
 
 import torch

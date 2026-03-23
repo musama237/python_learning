@@ -7,6 +7,11 @@ Count the number of vowels (a, e, i, o, u) in a string. Case-insensitive.
 
 Example:
     count_vowels("Hello World") -> 3
+
+Hints:
+    1. How can you check if a character belongs to a set of characters? Think about the "in" operator.
+    2. Convert the string to lowercase first so you only need to check against lowercase vowels "aeiou".
+    3. Iterate through each character, check if it is in "aeiou" (after lowering), and keep a running count.
 """
 
 

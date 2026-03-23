@@ -4,6 +4,11 @@ Difficulty: 💀 Extreme
 Topic: PyTorch, Attention, Transformer
 
 Implement attention mechanisms from scratch.
+
+Hints:
+    1. Attention scores = QK^T / sqrt(d_k); apply mask by setting masked positions to -inf before softmax, then multiply by V
+    2. Multi-head: split d_model into n_heads, apply attention to each head independently, then concatenate
+    3. Transformer block: self-attention + residual + LayerNorm, then FFN + residual + LayerNorm
 """
 
 import torch

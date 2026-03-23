@@ -10,6 +10,11 @@ Topic: Exceptions, Try/Except, Custom Exceptions
 Example:
     safe_divide(10, 3) -> 3.333...
     safe_divide(10, 0) -> None
+
+Hints:
+    1. Wrap risky operations in try/except and return a safe default when things go wrong.
+    2. Use isinstance() to check types before operating; raise your custom exceptions with descriptive messages for validation.
+    3. safe_divide: try a/b, except (ZeroDivisionError, TypeError) return None. validate_age: check isinstance(value, int) first (raise TypeValidationError), then check 0 <= value <= 150 (raise RangeValidationError).
 """
 
 

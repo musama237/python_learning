@@ -9,6 +9,11 @@ Topic: Backtracking, Recursion, Combinatorics
 
 Example:
     permutations([1, 2, 3]) -> [[1,2,3], [1,3,2], [2,1,3], ...]
+
+Hints:
+    1. Build the solution step by step; at each step try all valid options
+    2. Backtrack (undo the last choice) if the current path cannot lead to a valid solution
+    3. N-queens: place one queen per row, checking column and diagonal conflicts before placing
 """
 
 

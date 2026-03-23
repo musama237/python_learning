@@ -4,6 +4,11 @@ Difficulty: ⭐ Easy
 Topic: PyTorch, Tensors, GPU
 
 Master PyTorch tensor operations — the building blocks of deep learning.
+
+Hints:
+    1. Use torch.zeros(), torch.ones(), torch.randn(), torch.arange(), and torch.eye() to create different tensor types
+    2. Reshape tensors with .view() or .reshape(); use .unsqueeze() to add dimensions
+    3. Boolean indexing works like NumPy: x[x > 0] returns all positive elements as a 1D tensor
 """
 
 import torch

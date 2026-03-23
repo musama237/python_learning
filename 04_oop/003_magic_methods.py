@@ -14,6 +14,11 @@ Example:
     v2 = Vector(4, 5, 6)
     v1 + v2 -> Vector(5, 7, 9)
     v1 * 2 -> Vector(2, 4, 6)
+
+Hints:
+    1. Store components as tuple
+    2. __add__ creates new Vector with zipped sums
+    3. magnitude = sqrt(sum of squares)
 """
 
 

@@ -12,6 +12,11 @@ Example:
     bst.insert(3)
     bst.insert(7)
     bst.inorder() -> [3, 5, 7]
+
+Hints:
+    1. Insert: go left if value is smaller than current node, right if larger
+    2. In-order traversal visits left subtree, then root, then right subtree
+    3. Delete has three cases: leaf node (just remove), one child (replace with child), two children (replace with in-order successor or predecessor)
 """
 
 

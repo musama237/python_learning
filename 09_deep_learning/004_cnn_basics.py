@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: PyTorch, CNN, Image Classification
 
 Build CNN architectures for image data.
+
+Hints:
+    1. Use nn.Conv2d(in_channels, out_channels, kernel_size) for convolution layers
+    2. nn.MaxPool2d(2) halves spatial dimensions; calculate flatten size as channels * H * W after all convolutions and pools
+    3. For residual connections, add the input to the block output: output = relu(x + F(x))
 """
 
 import torch

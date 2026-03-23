@@ -4,6 +4,12 @@ Difficulty: ⭐⭐ Medium
 Topic: Counter, defaultdict, deque, namedtuple, OrderedDict
 
 Use the collections module to solve each problem efficiently.
+
+Hints:
+    1. Counter.most_common(k) gives the top-k elements by frequency
+    2. defaultdict(list) auto-creates empty lists on first access — great for grouping
+    3. Use a deque to maintain a sliding window with O(1) append and popleft
+    4. namedtuple creates a lightweight Point class with named x, y fields
 """
 
 from collections import Counter, defaultdict, deque, namedtuple

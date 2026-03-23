@@ -11,6 +11,11 @@ Example:
     with Timer() as t:
         time.sleep(0.1)
     t.elapsed >= 0.1  # True
+
+Hints:
+    1. __enter__ starts timer, returns self
+    2. __exit__ computes elapsed
+    3. SuppressErrors returns True from __exit__ to suppress
 """
 
 import time

@@ -7,6 +7,11 @@ Implement bubble sort. Optimize: stop early if no swaps occur in a pass.
 
 Example:
     bubble_sort([5, 3, 8, 1, 2]) -> [1, 2, 3, 5, 8]
+
+Hints:
+    1. Compare adjacent elements and swap if out of order
+    2. Repeat passes through the entire array until sorted
+    3. Optimize: if no swaps occur in a pass, the array is already sorted — stop early
 """
 
 

@@ -11,6 +11,11 @@ Write a function that returns a list of strings from 1 to n:
 
 Example:
     fizzbuzz(5) -> ["1", "2", "Fizz", "4", "Buzz"]
+
+Hints:
+    1. The order in which you check divisibility matters — what happens with numbers divisible by both 3 and 5?
+    2. Check divisibility by 15 (or both 3 and 5) first, then by 3, then by 5, then default to the number as a string.
+    3. Loop from 1 to n, build a result list, and append the appropriate string for each number based on the divisibility checks.
 """
 
 

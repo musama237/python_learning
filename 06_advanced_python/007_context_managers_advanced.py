@@ -6,6 +6,11 @@ Topic: contextlib, Generator-based CMs, Nested CMs
 1. Write context managers using @contextmanager decorator.
 2. Create a database transaction simulator.
 3. Create a temporary directory context manager.
+
+Hints:
+    1. With @contextmanager, code before yield is setup and code after yield is teardown
+    2. For transaction: copy the dict before yield, then restore original contents on exception
+    3. For temp_workspace: use os.chdir to enter the temp dir, and chdir back in the finally block
 """
 
 from contextlib import contextmanager

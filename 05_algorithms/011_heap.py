@@ -11,6 +11,11 @@ Example:
     h.push(5); h.push(3); h.push(7)
     h.pop() -> 3
     h.peek() -> 5
+
+Hints:
+    1. Store the heap as an array: parent at i//2, children at 2*i+1 and 2*i+2
+    2. Push: append to end and bubble up by swapping with parent while smaller
+    3. Pop: swap root with last element, remove last, then bubble down the new root
 """
 
 

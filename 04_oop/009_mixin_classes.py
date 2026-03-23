@@ -11,6 +11,11 @@ Create mixin classes that add functionality:
 Example:
     class User(JsonMixin, ComparableMixin):
         ...
+
+Hints:
+    1. to_json: json.dumps(self.__dict__)
+    2. from_json: create instance and set attributes
+    3. ComparableMixin uses self.key() for comparisons
 """
 
 import json

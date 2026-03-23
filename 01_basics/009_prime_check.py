@@ -11,6 +11,11 @@ Hint: You only need to check up to the square root of n.
 Example:
     is_prime(7) -> True
     is_prime(4) -> False
+
+Hints:
+    1. Think about which numbers to immediately rule out before doing any divisibility checks.
+    2. Numbers less than 2 are not prime. You only need to check divisors up to the square root of n.
+    3. Return False for n < 2. Loop from 2 to int(n**0.5) + 1; if any divides n evenly, return False. Otherwise return True.
 """
 
 

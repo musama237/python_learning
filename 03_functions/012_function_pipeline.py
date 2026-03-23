@@ -12,6 +12,11 @@ Example:
               .map(lambda x: x * 10)
               .reduce(lambda a, b: a + b))
     # result == 120
+
+Hints:
+    1. Store the data inside the object and have each method transform it, returning self for chaining.
+    2. Each method (map, filter, sort, take) should update self.data and return self. reduce iterates through self.data to produce a single value.
+    3. In __init__, store data as a list. map: self.data = [func(x) for x in self.data]; return self. filter: self.data = [x for x in self.data if func(x)]; return self. reduce: iterate with an accumulator, using initial or self.data[0] as the starting value.
 """
 
 

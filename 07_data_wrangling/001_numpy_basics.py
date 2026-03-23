@@ -4,6 +4,12 @@ Difficulty: ⭐ Easy
 Topic: NumPy, Arrays, Vectorization
 
 Solve each using NumPy operations (no Python loops).
+
+Hints:
+    1. normalize: (arr - arr.min()) / (arr.max() - arr.min())
+    2. moving_average: np.convolve with np.ones(window)/window
+    3. softmax: subtract max for stability then exp/sum
+    4. euclidean: use broadcasting with (X[:,None,:] - X[None,:,:])
 """
 
 import numpy as np

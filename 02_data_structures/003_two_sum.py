@@ -9,6 +9,11 @@ You may not use the same element twice.
 
 Example:
     two_sum([2, 7, 11, 15], 9) -> (0, 1)
+
+Hints:
+    1. A brute-force nested loop works, but there's a faster way using a lookup structure.
+    2. Use a dict to store {value: index} as you iterate through the list.
+    3. For each number, check if (target - num) already exists in your dict; if so, return both indices.
 """
 
 

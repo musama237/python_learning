@@ -9,6 +9,11 @@ Detect cycles (return empty list if cycle exists).
 Example:
     graph = {0: [1, 2], 1: [3], 2: [3], 3: []}
     topological_sort(graph) -> [0, 1, 2, 3] or [0, 2, 1, 3]
+
+Hints:
+    1. Kahn's algorithm: compute in-degree for each node; start with nodes that have in-degree 0
+    2. Use a queue (BFS): process a node, reduce in-degree of its neighbors, enqueue any that reach 0
+    3. If not all nodes are processed, a cycle exists — return empty list
 """
 
 

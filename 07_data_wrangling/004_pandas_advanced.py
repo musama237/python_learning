@@ -4,6 +4,12 @@ Difficulty: ⭐⭐ Medium
 Topic: Pandas, Merging, Pivoting, Window Functions
 
 Advanced Pandas data manipulation.
+
+Hints:
+    1. pd.merge(left, right, on=col, how='left').dropna() for joining
+    2. pd.pivot_table() for reshaping data
+    3. df['col'].rolling(window) for rolling statistics
+    4. drop_duplicates, fillna, str.strip for cleaning
 """
 
 import pandas as pd

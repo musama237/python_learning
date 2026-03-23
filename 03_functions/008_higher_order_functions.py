@@ -9,6 +9,11 @@ Then write a compose function that chains functions together.
 Example:
     my_map(lambda x: x*2, [1,2,3]) -> [2, 4, 6]
     compose(str, lambda x: x+1)(5) -> "6"
+
+Hints:
+    1. Higher-order functions take or return functions -- my_map just needs a loop applying func to each item.
+    2. For my_map: loop and append func(item). For compose: apply functions right-to-left on the input value.
+    3. my_map: return [func(x) for x in iterable]. compose: return a lambda that uses reduce or a loop to chain funcs from right to left, e.g., for f in reversed(funcs): val = f(val).
 """
 
 

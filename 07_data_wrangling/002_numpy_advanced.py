@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: NumPy, Broadcasting, Linear Algebra
 
 Advanced NumPy operations — all without Python loops.
+
+Hints:
+    1. batch_dot: (A * B).sum(axis=1)
+    2. one_hot: create zeros array, use fancy indexing to set 1s
+    3. convolution: nested loops sliding kernel over image
 """
 
 import numpy as np

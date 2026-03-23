@@ -12,6 +12,10 @@ Example:
     class Product:
         name = TypeChecked(str)
         price = RangeChecked(0, 10000)
+
+Hints:
+    1. __set__ validates then stores in obj.__dict__[self.name]
+    2. __get__ retrieves from obj.__dict__
 """
 
 

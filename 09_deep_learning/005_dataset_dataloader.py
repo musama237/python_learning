@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: PyTorch, Dataset, DataLoader, Transforms
 
 Create custom datasets and understand the data loading pipeline.
+
+Hints:
+    1. __getitem__ should return a (tensor_x, tensor_y) tuple; convert numpy arrays to tensors there
+    2. Convert numpy to torch tensors inside __getitem__ using torch.from_numpy() or torch.tensor()
+    3. Use torch.utils.data.random_split to divide a dataset into train/val splits
 """
 
 import torch

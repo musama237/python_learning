@@ -7,6 +7,11 @@ Merge two sorted lists into one sorted list. Do NOT use sort() or sorted().
 
 Example:
     merge_sorted([1, 3, 5], [2, 4, 6]) -> [1, 2, 3, 4, 5, 6]
+
+Hints:
+    1. Since both lists are already sorted, you can build the result in one pass.
+    2. Use two pointers (indices), one for each list, and always take the smaller front element.
+    3. Compare lst1[i] and lst2[j]; append the smaller one and advance that pointer. After the loop, append any remaining elements.
 """
 
 

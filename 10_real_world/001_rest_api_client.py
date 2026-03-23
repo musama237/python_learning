@@ -5,6 +5,11 @@ Topic: HTTP, APIs, JSON, Error Handling
 
 Build a robust API client with retries, rate limiting, and caching.
 Uses only stdlib (no requests library needed — use urllib).
+
+Hints:
+    1. RateLimiter: store timestamps of calls, remove old ones, check count
+    2. ResponseCache: store (value, expiry_time) tuples, check time.time() < expiry
+    3. APIClient: loop with try/except and exponential backoff sleep(2**attempt * base_delay)
 """
 
 import json

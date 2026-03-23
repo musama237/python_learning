@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: ML, Trees, Information Gain, Entropy
 
 Implement a decision tree classifier using information gain (entropy).
+
+Hints:
+    1. Entropy is -sum(p * log2(p)) where p is the proportion of each class
+    2. Try all features and all unique thresholds; pick the split with highest information gain
+    3. Recurse on left/right subsets until max_depth is reached or the node is pure
 """
 
 import numpy as np

@@ -13,6 +13,11 @@ Example:
     t.fahrenheit -> 212.0
     t.fahrenheit = 32
     t.celsius -> 0.0
+
+Hints:
+    1. Use @property for getter, @name.setter for setter
+    2. Store internal value as _celsius
+    3. Convert in fahrenheit property
 """
 
 

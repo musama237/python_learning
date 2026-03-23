@@ -10,6 +10,11 @@ All positional args will be numbers.
 Example:
     flexible(1, 2, 3, name="Alice", age=30)
     -> (6, {"name": "Alice", "age": 30})
+
+Hints:
+    1. Consider what built-in function can add up a collection of numbers, and what kwargs already is.
+    2. sum() works directly on the args tuple; kwargs is already a dict you can return as-is.
+    3. Return a tuple of (sum(args), kwargs) -- that handles empty args (sum returns 0) and empty kwargs (empty dict).
 """
 
 

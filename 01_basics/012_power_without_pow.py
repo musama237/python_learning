@@ -9,6 +9,11 @@ Assume exponent is a non-negative integer.
 Example:
     power(2, 10) -> 1024
     power(5, 0) -> 1
+
+Hints:
+    1. Exponentiation is just repeated multiplication — how many times do you multiply?
+    2. Multiply the base by itself exponent times. Remember that anything raised to the power 0 is 1.
+    3. Start result = 1, loop exponent times, multiply result *= base each iteration. Return result.
 """
 
 

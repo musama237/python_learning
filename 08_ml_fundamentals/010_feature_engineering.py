@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: ML, Preprocessing, Feature Scaling
 
 Implement common feature engineering techniques from scratch.
+
+Hints:
+    1. StandardScaler: (X - mean) / std; store mean and std from fit for transform and inverse_transform
+    2. MinMaxScaler: (X - min) / (max - min); store min and max from fit
+    3. Polynomial features: use itertools.combinations_with_replacement on column indices for all degree combinations
 """
 
 import numpy as np

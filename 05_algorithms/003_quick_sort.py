@@ -7,6 +7,11 @@ Implement quick sort. Pick the last element as pivot.
 
 Example:
     quick_sort([10, 7, 8, 9, 1, 5]) -> [1, 5, 7, 8, 9, 10]
+
+Hints:
+    1. Pick a pivot element and partition the array into less-than, equal, and greater-than groups
+    2. Recursively sort the less-than and greater-than groups
+    3. Concatenate the three groups: sorted less + equal + sorted greater
 """
 
 

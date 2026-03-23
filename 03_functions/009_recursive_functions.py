@@ -7,6 +7,11 @@ Solve each problem using RECURSION only (no loops).
 
 Example:
     sum_nested([1, [2, [3]], 4]) -> 10
+
+Hints:
+    1. Every recursive function needs a base case (when to stop) before the recursive call.
+    2. For sum_nested, check isinstance(item, list) to decide whether to recurse or add. For binary_search, compare the target with the middle element.
+    3. sum_nested: for each item, if it's a list call sum_nested on it, otherwise add its value. binary_search: compute mid = (low+high)//2, compare arr[mid] with target, recurse on left or right half.
 """
 
 

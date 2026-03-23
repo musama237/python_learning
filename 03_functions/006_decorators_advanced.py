@@ -14,6 +14,11 @@ Example:
     @memoize
     def fib(n):
         ...
+
+Hints:
+    1. retry needs a decorator factory (function returning a decorator); memoize needs a dict to remember previous results.
+    2. For retry: loop max_attempts times with try/except, re-raise on the last attempt. For memoize: use a dict with args as key, store it on func.cache.
+    3. retry: for i in range(max_attempts) try calling func, except on the last iteration re-raise. memoize: check if args in cache dict, if not compute and store, then return cached value.
 """
 
 

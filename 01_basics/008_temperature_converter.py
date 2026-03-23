@@ -11,6 +11,11 @@ Formula: F = C * 9/5 + 32
 Example:
     celsius_to_fahrenheit(0) -> 32.0
     fahrenheit_to_celsius(212) -> 100.0
+
+Hints:
+    1. This is about applying a mathematical formula and controlling precision.
+    2. Use the formula F = C * 9/5 + 32 for one direction, and rearrange it for the other: C = (F - 32) * 5/9.
+    3. Apply the formula and wrap the result with round(result, 2) to get exactly 2 decimal places.
 """
 
 

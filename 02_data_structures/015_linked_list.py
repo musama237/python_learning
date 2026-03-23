@@ -11,6 +11,11 @@ Example:
     ll.append(2)
     ll.prepend(0)
     ll.to_list() -> [0, 1, 2]
+
+Hints:
+    1. Each node points to the next one — traversal means following .next until you hit None.
+    2. Use a while loop (while current is not None) to traverse; for delete, you need to track the previous node.
+    3. For append: traverse to the last node and set its .next. For delete: if head matches, update head; otherwise find the node and set previous.next = current.next.
 """
 
 

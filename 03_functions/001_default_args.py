@@ -12,6 +12,11 @@ Write a function that builds a user profile dictionary.
 Example:
     build_profile("Alice", age=30, city="NYC")
     -> {"name": "Alice", "age": 30, "occupation": "Unknown", "city": "NYC"}
+
+Hints:
+    1. Think about how to combine fixed keys with arbitrary extra keys into one dict.
+    2. Start by building a dict with the required params (name, age, occupation), then merge in kwargs.
+    3. Use dict.update(kwargs) or {**base_dict, **kwargs} to merge the extra keyword arguments into your profile dict.
 """
 
 

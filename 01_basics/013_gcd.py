@@ -11,6 +11,11 @@ Euclidean algorithm: gcd(a, b) = gcd(b, a % b) until b == 0
 Example:
     gcd(12, 8) -> 4
     gcd(17, 5) -> 1
+
+Hints:
+    1. The Euclidean algorithm repeatedly replaces the larger number — think about what operation reduces the problem.
+    2. The key insight: gcd(a, b) = gcd(b, a % b). The process stops when b becomes 0, and a is the answer.
+    3. Loop while b != 0: set a, b = b, a % b. When b is 0, return a.
 """
 
 

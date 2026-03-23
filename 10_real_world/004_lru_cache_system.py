@@ -10,6 +10,12 @@ Requirements:
 - get(key): Return value if exists, else -1. Mark as recently used.
 - put(key, value): Insert/update. Evict least recently used if at capacity.
 - Both operations must be O(1).
+
+Hints:
+    1. Dict for O(1) lookup + doubly linked list for O(1) order tracking
+    2. head=most recent, tail=least recent
+    3. On get: move node to front
+    4. On put: add to front, if over capacity remove from tail
 """
 
 

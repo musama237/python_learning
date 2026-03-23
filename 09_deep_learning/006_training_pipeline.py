@@ -4,6 +4,11 @@ Difficulty: ⭐⭐⭐ Hard
 Topic: PyTorch, Training, Validation, Checkpointing
 
 Build a complete training pipeline with best practices.
+
+Hints:
+    1. Call model.train() before training and model.eval() before validation to set the correct mode
+    2. Wrap validation in torch.no_grad() to disable gradient computation and save memory
+    3. Save checkpoints with torch.save({'model': model.state_dict(), 'epoch': epoch}, path)
 """
 
 import torch

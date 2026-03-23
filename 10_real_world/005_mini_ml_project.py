@@ -11,6 +11,12 @@ Build a complete ML pipeline from scratch that:
 5. Makes predictions
 
 This is the capstone challenge — use everything you've learned!
+
+Hints:
+    1. generate_data: use np.random with different scales
+    2. preprocess: standardize with training mean/std
+    3. evaluate: TP/FP/FN/TN from comparing predictions
+    4. run: split, preprocess, train each model, evaluate, sort by F1
 """
 
 import numpy as np

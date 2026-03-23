@@ -4,6 +4,11 @@ Difficulty: ⭐ Easy
 Topic: Dict Comprehensions
 
 Solve each function using a SINGLE dict comprehension.
+
+Hints:
+    1. Dict comprehensions follow the pattern: {key: value for item in iterable}.
+    2. You can add conditions with if, and iterate over .items() to access both keys and values.
+    3. For merge: collect all keys from both dicts using a set union, then sum values with dict.get(key, 0) for each dict.
 """
 
 

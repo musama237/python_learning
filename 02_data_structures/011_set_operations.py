@@ -8,6 +8,11 @@ Implement set operations WITHOUT using Python's built-in set operations
 
 Example:
     my_union([1, 2], [2, 3]) -> [1, 2, 3]
+
+Hints:
+    1. For union, you need all unique elements from both lists combined.
+    2. For intersection, an element must appear in both lists; for difference, only in the first.
+    3. Build a result list by iterating and checking membership (use "in" to check if element exists in the other list), avoiding duplicates.
 """
 
 

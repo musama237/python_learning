@@ -10,6 +10,12 @@ Build a mini command-line tool framework that supports:
 - Progress display
 
 No external dependencies — stdlib only.
+
+Hints:
+    1. Use argparse.ArgumentParser with add_subparsers()
+    2. Capture stdout with contextlib.redirect_stdout(StringIO())
+    3. TextTable: calculate column widths as max of header/data lengths
+    4. ProgressBar: filled = int(width * current / total)
 """
 
 import argparse

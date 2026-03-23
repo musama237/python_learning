@@ -10,6 +10,11 @@ Implement multiple binary search variants:
 4. Find insertion point (like bisect_left)
 
 All inputs are sorted lists.
+
+Hints:
+    1. Compare the middle element to the target; go left half or right half accordingly
+    2. For first/last occurrence, keep searching even after finding a match
+    3. For first occurrence, when found move right boundary left; for last occurrence, move left boundary right
 """
 
 

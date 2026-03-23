@@ -10,6 +10,11 @@ Create a shape hierarchy:
 - Circle(radius)
 
 Use math.pi for circle calculations.
+
+Hints:
+    1. Square.__init__ calls super().__init__(side, side)
+    2. Circle uses math.pi
+    3. ABC forces subclasses to implement methods
 """
 
 import math

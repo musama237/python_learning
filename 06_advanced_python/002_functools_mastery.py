@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: functools, Caching, Partial
 
 Explore functools: lru_cache, partial, reduce, singledispatch.
+
+Hints:
+    1. Decorate a recursive fibonacci with @lru_cache to memoize results
+    2. Use partial(pow_func, exponent=n) to create square, cube, fourth functions from one base
+    3. Register singledispatch overloads with @format_value.register(int) and similar for each type
 """
 
 import functools

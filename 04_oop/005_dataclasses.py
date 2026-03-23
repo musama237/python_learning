@@ -8,6 +8,11 @@ Use @dataclass to create clean data models.
 1. Point3D with x, y, z coordinates and a distance_to method.
 2. Student with name, grades list, and computed GPA property.
 3. Inventory Item with auto-computed total_cost.
+
+Hints:
+    1. @dataclass auto-generates __init__
+    2. field(default_factory=list) for mutable defaults
+    3. __post_init__ for computed fields
 """
 
 from dataclasses import dataclass, field

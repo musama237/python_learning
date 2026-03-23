@@ -4,6 +4,11 @@ Difficulty: ⭐⭐ Medium
 Topic: Functional Programming
 
 Solve each using lambda with map/filter/reduce (one line each).
+
+Hints:
+    1. Remember that map and filter return iterators in Python 3, not lists.
+    2. Wrap map() and filter() calls in list(); filter keeps items where the lambda returns True; reduce needs an initial value to handle empty lists.
+    3. For double_all: list(map(lambda x: x*2, nums)); for product_of_all: reduce(lambda a,b: a*b, nums, 1) -- the third arg to reduce is the initial value for empty lists.
 """
 
 from functools import reduce
