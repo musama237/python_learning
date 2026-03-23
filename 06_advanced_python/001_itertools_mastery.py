@@ -13,6 +13,13 @@ Hints:
     2. chain.from_iterable flattens one level of nesting without unpacking
     3. groupby groups consecutive equal elements — perfect for group_consecutive
     4. Build the powerset by combining combinations of every possible length
+
+Learn:
+    from itertools import accumulate, chain, groupby, combinations, permutations
+    list(accumulate([1,2,3]))  # -> [1, 3, 6]
+    list(chain.from_iterable([[1,2],[3]]))  # -> [1, 2, 3]
+    [(k, list(g)) for k, g in groupby([1,1,2,2])]  # groups consecutive
+    list(combinations([1,2,3], 2))  # -> [(1,2), (1,3), (2,3)]
 """
 
 import itertools

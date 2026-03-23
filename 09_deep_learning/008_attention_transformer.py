@@ -9,6 +9,26 @@ Hints:
     1. Attention scores = QK^T / sqrt(d_k); apply mask by setting masked positions to -inf before softmax, then multiply by V
     2. Multi-head: split d_model into n_heads, apply attention to each head independently, then concatenate
     3. Transformer block: self-attention + residual + LayerNorm, then FFN + residual + LayerNorm
+
+Learn:
+    # Scaled dot-product attention:
+    d_k = Q.shape[-1]
+    scores = Q @ K.transpose(-2, -1) / math.sqrt(d_k)
+    if mask is not None:
+        scores = scores.masked_fill(mask, float('-inf'))
+    weights = torch.softmax(scores, dim=-1)
+    output = weights @ V
+
+    # Multi-head: split d_model into heads
+    # Q: (batch, seq, d_model) -> (batch, heads, seq, d_k)
+    Q = Q.view(batch, seq, n_heads, d_k).transpose(1, 2)
+
+    # Positional encoding:
+    pe = torch.zeros(max_len, d_model)
+    pos = torch.arange(max_len).unsqueeze(1)
+    div = torch.exp(torch.arange(0, d_model, 2) * -(math.log(10000) / d_model))
+    pe[:, 0::2] = torch.sin(pos * div)
+    pe[:, 1::2] = torch.cos(pos * div)
 """
 
 import torch

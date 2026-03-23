@@ -15,6 +15,25 @@ Hints:
     1. Override __new__
     2. Check if instance exists (cls._instance)
     3. Factory uses dict mapping type string to class
+
+Learn:
+    # __new__ controls instance creation:
+    class Singleton:
+        _instance = None
+        def __new__(cls):
+            if cls._instance is None:
+                cls._instance = super().__new__(cls)
+            return cls._instance
+
+    # Factory pattern with dict:
+    class Factory:
+        _registry = {}
+        def register(self, name, cls):
+            self._registry[name] = cls
+        def create(self, name, *args):
+            if name not in self._registry:
+                raise ValueError(f"Unknown: {name}")
+            return self._registry[name](*args)
 """
 
 

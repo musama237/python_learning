@@ -13,6 +13,18 @@ Hints:
     1. What happens if k is larger than the length of the list?
     2. Use modulo (k % len) to handle cases where k >= len; this gives the effective rotation.
     3. Split the list into two parts at position (len - k) and concatenate them in reverse order.
+
+Learn:
+    # Modulo handles k > length:
+    k = 7
+    length = 5
+    effective_k = k % length  # -> 2
+
+    # List slicing:
+    lst = [1, 2, 3, 4, 5]
+    lst[-2:]   # -> [4, 5]  (last 2)
+    lst[:-2]   # -> [1, 2, 3]  (everything except last 2)
+    lst[-2:] + lst[:-2]  # -> [4, 5, 1, 2, 3]
 """
 
 

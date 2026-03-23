@@ -15,6 +15,18 @@ Hints:
     1. Anagrams share the same letters — how could you create a common identifier for them?
     2. Sorting a word's characters gives a canonical key (e.g., sorted("eat") -> "aet").
     3. Use a dict with the sorted-character tuple/string as key; append each word to its group, then sort and return the groups.
+
+Learn:
+    # Sort characters to make a key:
+    sorted("eat")    # -> ['a', 'e', 't']
+    "".join(sorted("eat"))  # -> "aet"
+    tuple(sorted("eat"))    # -> ('a', 'e', 't')  (hashable key)
+
+    # defaultdict auto-creates missing keys:
+    from collections import defaultdict
+    groups = defaultdict(list)
+    groups["aet"].append("eat")
+    groups["aet"].append("tea")
 """
 
 

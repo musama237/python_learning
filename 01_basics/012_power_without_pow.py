@@ -14,6 +14,17 @@ Hints:
     1. Exponentiation is just repeated multiplication — how many times do you multiply?
     2. Multiply the base by itself exponent times. Remember that anything raised to the power 0 is 1.
     3. Start result = 1, loop exponent times, multiply result *= base each iteration. Return result.
+
+Learn:
+    # Repeated multiplication:
+    result = 1
+    for _ in range(3):
+        result *= 2  # 1*2=2, 2*2=4, 4*2=8
+    # result is 2^3 = 8
+
+    # The underscore _ means "I don't need this variable":
+    for _ in range(5):  # just repeat 5 times
+        pass
 """
 
 

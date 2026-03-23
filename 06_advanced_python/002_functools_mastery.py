@@ -9,6 +9,18 @@ Hints:
     1. Decorate a recursive fibonacci with @lru_cache to memoize results
     2. Use partial(pow_func, exponent=n) to create square, cube, fourth functions from one base
     3. Register singledispatch overloads with @format_value.register(int) and similar for each type
+
+Learn:
+    import functools
+    @functools.lru_cache(maxsize=None)
+    def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)
+
+    square = functools.partial(pow, exp=2)  # partial application
+
+    @functools.singledispatch
+    def process(val): return str(val)
+    @process.register(int)
+    def _(val): return f"{val:,}"  # format with commas
 """
 
 import functools

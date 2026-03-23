@@ -18,6 +18,25 @@ Hints:
     1. Currying transforms f(a, b, c) into f(a)(b)(c) -- you need to collect arguments until you have enough.
     2. Use inspect.signature to count how many args the function expects. Return a new function that accumulates args until enough are collected.
     3. Inside curry, define an inner function that takes *args, appends to accumulated args, and if len(accumulated) >= expected param count calls the original func, otherwise returns another accumulating function.
+
+Learn:
+    # inspect.signature counts parameters:
+    import inspect
+    def add(a, b, c): pass
+    sig = inspect.signature(add)
+    len(sig.parameters)  # -> 3
+
+    # Accumulating arguments:
+    def curried(*new_args):
+        all_args = old_args + new_args
+        if len(all_args) >= expected:
+            return func(*all_args)
+        return make_curried(all_args)  # need more args
+
+    # functools.partial pre-fills arguments:
+    from functools import partial
+    add5 = partial(lambda a, b: a + b, 5)
+    add5(3)  # -> 8
 """
 
 import inspect

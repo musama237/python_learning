@@ -9,6 +9,16 @@ All code should pass mypy strict checking.
 Hints:
     1. For SortedList: use the bisect module to find the O(log n) insertion point
     2. For Result: store both value and error, then check which one is set for is_ok/unwrap
+
+Learn:
+    from typing import TypeVar, Generic
+    T = TypeVar("T")
+    class Box(Generic[T]):
+        def __init__(self, item: T): self.item = item
+
+    import bisect
+    bisect.insort(sorted_list, new_item)  # insert in sorted position
+    idx = bisect.bisect_left(sorted_list, target)  # binary search
 """
 
 from typing import TypeVar, Generic, Protocol, runtime_checkable

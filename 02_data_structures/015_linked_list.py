@@ -16,6 +16,26 @@ Hints:
     1. Each node points to the next one — traversal means following .next until you hit None.
     2. Use a while loop (while current is not None) to traverse; for delete, you need to track the previous node.
     3. For append: traverse to the last node and set its .next. For delete: if head matches, update head; otherwise find the node and set previous.next = current.next.
+
+Learn:
+    # Creating a node:
+    node = Node(5)
+    node.data   # -> 5
+    node.next   # -> None
+
+    # Linking nodes:
+    node1 = Node(1)
+    node2 = Node(2)
+    node1.next = node2  # 1 -> 2
+
+    # Traversing a linked list:
+    current = self.head
+    while current is not None:
+        print(current.data)
+        current = current.next
+
+    # Deleting a node (skip over it):
+    previous.next = current.next  # removes current from chain
 """
 
 

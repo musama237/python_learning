@@ -9,6 +9,27 @@ Hints:
     1. Call model.train() before training and model.eval() before validation to set the correct mode
     2. Wrap validation in torch.no_grad() to disable gradient computation and save memory
     3. Save checkpoints with torch.save({'model': model.state_dict(), 'epoch': epoch}, path)
+
+Learn:
+    # Training epoch:
+    model.train()
+    for batch_X, batch_y in train_loader:
+        pred = model(batch_X)
+        loss = criterion(pred, batch_y)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    # Validation (no gradients):
+    model.eval()
+    with torch.no_grad():
+        for batch_X, batch_y in val_loader:
+            pred = model(batch_X)
+
+    # Save/load checkpoint:
+    torch.save({"model": model.state_dict(), "epoch": epoch}, path)
+    checkpoint = torch.load(path)
+    model.load_state_dict(checkpoint["model"])
 """
 
 import torch

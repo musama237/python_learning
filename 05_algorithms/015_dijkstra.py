@@ -20,6 +20,22 @@ Hints:
     1. Use a min-heap (heapq) seeded with (0, start); greedily visit the closest unvisited node
     2. For each visited node, update its neighbors if a shorter path is found through the current node
     3. Skip nodes already finalized (already popped with a shorter distance); track parents to reconstruct paths
+
+Learn:
+    # Min-heap for shortest distances:
+    import heapq
+    heap = [(0, start)]  # (distance, node)
+    distances = {start: 0}
+
+    while heap:
+        dist, node = heapq.heappop(heap)
+        if dist > distances.get(node, float('inf')):
+            continue  # already found shorter path
+        for neighbor, weight in graph[node]:
+            new_dist = dist + weight
+            if new_dist < distances.get(neighbor, float('inf')):
+                distances[neighbor] = new_dist
+                heapq.heappush(heap, (new_dist, neighbor))
 """
 
 import heapq

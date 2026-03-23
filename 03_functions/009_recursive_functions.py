@@ -12,6 +12,27 @@ Hints:
     1. Every recursive function needs a base case (when to stop) before the recursive call.
     2. For sum_nested, check isinstance(item, list) to decide whether to recurse or add. For binary_search, compare the target with the middle element.
     3. sum_nested: for each item, if it's a list call sum_nested on it, otherwise add its value. binary_search: compute mid = (low+high)//2, compare arr[mid] with target, recurse on left or right half.
+
+Learn:
+    # Recursion pattern:
+    def countdown(n):
+        if n <= 0:           # BASE CASE - stop!
+            return
+        print(n)
+        countdown(n - 1)     # RECURSIVE CALL - smaller problem
+
+    # Recursion with return value:
+    def sum_list(lst):
+        if not lst:          # base case: empty list
+            return 0
+        return lst[0] + sum_list(lst[1:])  # first + rest
+
+    # Binary search recursion:
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return search(arr, target, mid + 1, high)  # right half
 """
 
 

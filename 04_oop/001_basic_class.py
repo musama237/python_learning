@@ -16,6 +16,23 @@ Hints:
     1. Store owner/balance as self attributes
     2. Check amount > 0 before deposit/withdraw
     3. Check balance >= amount before withdraw
+
+Learn:
+    # Define a class with __init__:
+    class Dog:
+        def __init__(self, name):
+            self.name = name  # instance attribute
+
+        def bark(self):
+            return f"{self.name} says woof!"
+
+    # Raise ValueError for invalid input:
+    if amount < 0:
+        raise ValueError("Amount must be positive")
+
+    # __str__ for string representation:
+    def __str__(self):
+        return f"Dog(name={self.name})"
 """
 
 

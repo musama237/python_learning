@@ -9,6 +9,18 @@ Hints:
     1. RNN update rule: h_t = tanh(W_ih @ x_t + W_hh @ h_{t-1} + bias); loop over the sequence length
     2. For the LSTM classifier, use nn.LSTM and take the last hidden state for classification
     3. Initialize hidden state as zeros with shape (batch_size, hidden_size)
+
+Learn:
+    # RNN cell from scratch:
+    h = torch.zeros(batch, hidden_size)
+    for t in range(seq_len):
+        h = torch.tanh(x[:, t] @ W_ih + h @ W_hh + bias)
+
+    # nn.LSTM usage:
+    self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
+    output, (h_n, c_n) = self.lstm(embedded)
+    last_hidden = h_n[-1]  # use for classification
+    logits = self.fc(last_hidden)
 """
 
 import torch

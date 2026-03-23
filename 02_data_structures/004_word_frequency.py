@@ -13,6 +13,20 @@ Hints:
     1. You need to break the string into individual words first.
     2. Use str.split() to get words, and str.lower() to normalize case.
     3. Iterate over the lowercase words; for each word, increment its count in a dict (defaulting to 0).
+
+Learn:
+    # Split string into words:
+    "hello world".split()  # -> ["hello", "world"]
+
+    # Count with dict.get():
+    counts = {}
+    word = "hello"
+    counts[word] = counts.get(word, 0) + 1
+
+    # Or initialize if missing:
+    if word not in counts:
+        counts[word] = 0
+    counts[word] += 1
 """
 
 

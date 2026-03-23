@@ -9,6 +9,19 @@ Hints:
     1. Compute Euclidean distances from the query point to all training points
     2. Use argsort to find the k nearest neighbors by index
     3. For classification use majority vote (Counter.most_common); for regression take the mean of k neighbors
+
+Learn:
+    # Euclidean distance:
+    dist = np.sqrt(np.sum((x1 - x2) ** 2))
+
+    # Find k nearest:
+    distances = [self._distance(x, x_train) for x_train in self.X_train]
+    k_indices = np.argsort(distances)[:self.k]
+    k_labels = self.y_train[k_indices]
+
+    # Majority vote:
+    from collections import Counter
+    most_common = Counter(k_labels).most_common(1)[0][0]
 """
 
 import numpy as np

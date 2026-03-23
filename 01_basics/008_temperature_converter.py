@@ -16,6 +16,15 @@ Hints:
     1. This is about applying a mathematical formula and controlling precision.
     2. Use the formula F = C * 9/5 + 32 for one direction, and rearrange it for the other: C = (F - 32) * 5/9.
     3. Apply the formula and wrap the result with round(result, 2) to get exactly 2 decimal places.
+
+Learn:
+    # Rounding to decimal places:
+    round(3.14159, 2)  # -> 3.14
+    round(98.6, 2)     # -> 98.6
+
+    # Rearranging formulas:
+    # If F = C * 9/5 + 32
+    # Then C = (F - 32) * 5/9
 """
 
 

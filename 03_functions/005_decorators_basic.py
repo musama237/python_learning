@@ -13,6 +13,34 @@ Hints:
     1. A decorator is a function that takes a function and returns a new wrapper function that adds behavior.
     2. Use functools.wraps on your wrapper; you can store state as attributes on the wrapper function itself (e.g., wrapper.logs = []).
     3. For logger: define wrapper(*args, **kwargs), format args into a string, append to wrapper.logs, then call and return func(*args, **kwargs). For timer: record time.time() before and after the call, store the difference in wrapper.last_time.
+
+Learn:
+    # A decorator wraps a function:
+    def my_decorator(func):
+        def wrapper(*args, **kwargs):
+            print("Before")
+            result = func(*args, **kwargs)
+            print("After")
+            return result
+        return wrapper
+
+    @my_decorator
+    def say_hello():
+        print("Hello!")
+
+    # Storing state on the wrapper function:
+    def logger(func):
+        def wrapper(*args, **kwargs):
+            wrapper.call_count += 1
+            return func(*args, **kwargs)
+        wrapper.call_count = 0
+        return wrapper
+
+    # Timing with time.time():
+    import time
+    start = time.time()
+    # ... do work ...
+    elapsed = time.time() - start
 """
 
 import time

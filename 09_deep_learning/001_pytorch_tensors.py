@@ -9,6 +9,17 @@ Hints:
     1. Use torch.zeros(), torch.ones(), torch.randn(), torch.arange(), and torch.eye() to create different tensor types
     2. Reshape tensors with .view() or .reshape(); use .unsqueeze() to add dimensions
     3. Boolean indexing works like NumPy: x[x > 0] returns all positive elements as a 1D tensor
+
+Learn:
+    import torch
+    torch.zeros(3, 4)          # 3x4 zeros
+    torch.randn(5, 5)          # random normal
+    torch.arange(10)           # [0, 1, ..., 9]
+    x.reshape(3, 4)            # reshape
+    x.unsqueeze(0)             # add dimension: (12,) -> (1, 12)
+    x[x > 0]                   # boolean indexing
+    torch.softmax(x, dim=1)    # softmax along columns
+    x.T                        # transpose
 """
 
 import torch

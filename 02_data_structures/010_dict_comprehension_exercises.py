@@ -9,6 +9,23 @@ Hints:
     1. Dict comprehensions follow the pattern: {key: value for item in iterable}.
     2. You can add conditions with if, and iterate over .items() to access both keys and values.
     3. For merge: collect all keys from both dicts using a set union, then sum values with dict.get(key, 0) for each dict.
+
+Learn:
+    # Dict comprehension:
+    {v: k for k, v in {"a": 1}.items()}  # -> {1: "a"}
+
+    # Filter in dict comprehension:
+    {k: v for k, v in d.items() if v > 2}
+
+    # set of all keys from two dicts:
+    all_keys = set(d1) | set(d2)
+
+    # dict.get with default:
+    d.get("missing_key", 0)  # -> 0 (default if key missing)
+
+    # Count characters:
+    s = "aab"
+    {ch: s.count(ch) for ch in set(s)}  # -> {"a": 2, "b": 1}
 """
 
 

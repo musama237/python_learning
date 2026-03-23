@@ -16,6 +16,23 @@ Example:
 Hints:
     1. __set__ validates then stores in obj.__dict__[self.name]
     2. __get__ retrieves from obj.__dict__
+
+Learn:
+    # Descriptor: controls attribute access on a class:
+    class Typed:
+        def __init__(self, expected_type):
+            self.expected_type = expected_type
+        def __set_name__(self, owner, name):
+            self.name = name              # auto-called by Python
+        def __get__(self, obj, objtype=None):
+            return obj.__dict__[self.name]
+        def __set__(self, obj, value):
+            if not isinstance(value, self.expected_type):
+                raise TypeError(f"Expected {self.expected_type}")
+            obj.__dict__[self.name] = value
+
+    class Person:
+        name = Typed(str)  # descriptor instance
 """
 
 

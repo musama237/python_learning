@@ -17,6 +17,18 @@ Hints:
     1. Think about how to combine fixed keys with arbitrary extra keys into one dict.
     2. Start by building a dict with the required params (name, age, occupation), then merge in kwargs.
     3. Use dict.update(kwargs) or {**base_dict, **kwargs} to merge the extra keyword arguments into your profile dict.
+
+Learn:
+    # Building a dict from known keys:
+    profile = {"name": name, "age": age}
+
+    # Merging dicts:
+    base = {"a": 1}
+    extra = {"b": 2, "c": 3}
+    base.update(extra)  # base is now {"a": 1, "b": 2, "c": 3}
+
+    # Or use unpacking:
+    merged = {**base, **extra}
 """
 
 

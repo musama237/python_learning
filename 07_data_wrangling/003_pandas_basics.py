@@ -10,6 +10,14 @@ Hints:
     2. df[df.col >= val].sort_values() for filtering and sorting
     3. df.apply or np.where for conditional column
     4. groupby().agg() for group statistics
+
+Learn:
+    import pandas as pd
+    df = pd.DataFrame({"name": ["A", "B"], "age": [25, 30]})
+    df[df["age"] > 25]  # filter rows
+    df.sort_values("age", ascending=False)  # sort
+    df["category"] = np.where(df["price"] > 50, "expensive", "cheap")
+    df.groupby("dept")["salary"].agg(["mean", "max", "count"])
 """
 
 import pandas as pd

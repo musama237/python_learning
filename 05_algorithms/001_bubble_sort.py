@@ -12,6 +12,19 @@ Hints:
     1. Compare adjacent elements and swap if out of order
     2. Repeat passes through the entire array until sorted
     3. Optimize: if no swaps occur in a pass, the array is already sorted — stop early
+
+Learn:
+    # Swap adjacent elements:
+    arr = arr.copy()  # don't modify original
+    for i in range(len(arr) - 1):
+        if arr[i] > arr[i + 1]:
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
+
+    # Early exit optimization:
+    swapped = False
+    # ... inside loop: swapped = True when you swap
+    if not swapped:
+        break  # already sorted
 """
 
 

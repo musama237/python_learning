@@ -14,6 +14,21 @@ Hints:
     1. A brute-force nested loop works, but there's a faster way using a lookup structure.
     2. Use a dict to store {value: index} as you iterate through the list.
     3. For each number, check if (target - num) already exists in your dict; if so, return both indices.
+
+Learn:
+    # Dict as a lookup table:
+    seen = {}
+    seen[7] = 0    # store value -> index
+    7 in seen       # -> True (O(1) lookup)
+
+    # enumerate gives index + value:
+    for i, num in enumerate([10, 20, 30]):
+        print(i, num)  # 0 10, 1 20, 2 30
+
+    # Complement pattern:
+    target = 9
+    num = 2
+    complement = target - num  # 7
 """
 
 

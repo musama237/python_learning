@@ -14,6 +14,21 @@ Hints:
     1. Build the solution step by step; at each step try all valid options
     2. Backtrack (undo the last choice) if the current path cannot lead to a valid solution
     3. N-queens: place one queen per row, checking column and diagonal conflicts before placing
+
+Learn:
+    # Backtracking template:
+    def backtrack(path, choices):
+        if is_complete(path):
+            results.append(path.copy())
+            return
+        for choice in choices:
+            path.append(choice)         # make choice
+            backtrack(path, remaining)   # explore
+            path.pop()                  # undo choice
+
+    # N-Queens: check conflicts:
+    # Same column: col == placed_col
+    # Same diagonal: abs(row - placed_row) == abs(col - placed_col)
 """
 
 

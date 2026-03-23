@@ -18,6 +18,19 @@ Hints:
     1. Think about which built-in Python data structure naturally supports LIFO behavior.
     2. A list works perfectly — append() adds to top, pop() removes from top, [-1] peeks.
     3. Store items in a list internally; use len() for size, check length for is_empty, and raise IndexError when operating on an empty stack.
+
+Learn:
+    # List as a stack:
+    stack = []
+    stack.append(1)   # push: [1]
+    stack.append(2)   # push: [1, 2]
+    stack[-1]          # peek: 2 (last element)
+    stack.pop()        # pop: returns 2, stack is [1]
+    len(stack)         # size: 1
+
+    # Raise an error:
+    if len(stack) == 0:
+        raise IndexError("Stack is empty")
 """
 
 

@@ -16,6 +16,21 @@ Hints:
     1. Think about which numbers to immediately rule out before doing any divisibility checks.
     2. Numbers less than 2 are not prime. You only need to check divisors up to the square root of n.
     3. Return False for n < 2. Loop from 2 to int(n**0.5) + 1; if any divides n evenly, return False. Otherwise return True.
+
+Learn:
+    # Square root without importing math:
+    n ** 0.5  # square root of n
+
+    # range with int conversion:
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:  # found a divisor, not prime
+            pass
+
+    # Early return pattern:
+    def check(n):
+        if n < 2:
+            return False  # exits immediately
+        return True
 """
 
 

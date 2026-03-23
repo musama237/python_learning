@@ -9,6 +9,20 @@ Hints:
     1. __getitem__ should return a (tensor_x, tensor_y) tuple; convert numpy arrays to tensors there
     2. Convert numpy to torch tensors inside __getitem__ using torch.from_numpy() or torch.tensor()
     3. Use torch.utils.data.random_split to divide a dataset into train/val splits
+
+Learn:
+    from torch.utils.data import Dataset, DataLoader
+    class MyData(Dataset):
+        def __init__(self, X, y):
+            self.X = torch.tensor(X, dtype=torch.float32)
+            self.y = torch.tensor(y, dtype=torch.long)
+        def __len__(self): return len(self.X)
+        def __getitem__(self, i): return self.X[i], self.y[i]
+
+    # Split and load:
+    from torch.utils.data import random_split
+    train, val = random_split(dataset, [80, 20])
+    loader = DataLoader(train, batch_size=32, shuffle=True)
 """
 
 import torch

@@ -9,6 +9,19 @@ Hints:
     1. Initialize centroids by randomly selecting k data points from the dataset
     2. Assign each point to its nearest centroid using argmin of distances
     3. Update each centroid as the mean of all points assigned to it; repeat until convergence
+
+Learn:
+    # Random initialization:
+    indices = np.random.choice(n, self.k, replace=False)
+    self.centroids = X[indices]
+
+    # Assign clusters (distances):
+    distances = np.sqrt(((X[:, None] - self.centroids[None]) ** 2).sum(axis=2))
+    self.labels = distances.argmin(axis=1)
+
+    # Update centroids:
+    for i in range(self.k):
+        self.centroids[i] = X[self.labels == i].mean(axis=0)
 """
 
 import numpy as np

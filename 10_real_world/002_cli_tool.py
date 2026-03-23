@@ -16,6 +16,22 @@ Hints:
     2. Capture stdout with contextlib.redirect_stdout(StringIO())
     3. TextTable: calculate column widths as max of header/data lengths
     4. ProgressBar: filled = int(width * current / total)
+
+Learn:
+    import argparse
+    parser = argparse.ArgumentParser()
+    sub = parser.add_subparsers(dest="command")
+    greet_parser = sub.add_parser("greet")
+    greet_parser.add_argument("name")
+    args = parser.parse_args(["greet", "World"])
+
+    # Capture print output:
+    from io import StringIO
+    from contextlib import redirect_stdout
+    buf = StringIO()
+    with redirect_stdout(buf):
+        print("hello")
+    output = buf.getvalue()  # -> "hello\n"
 """
 
 import argparse

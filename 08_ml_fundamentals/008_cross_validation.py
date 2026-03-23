@@ -9,6 +9,20 @@ Hints:
     1. Shuffle indices, then split into k equal-sized folds; for each fold use it as test, rest as train
     2. For confusion matrix, compare predictions vs true labels element-wise to count TP, TN, FP, FN
     3. Precision = TP/(TP+FP), recall = TP/(TP+FN), F1 = 2*precision*recall/(precision+recall)
+
+Learn:
+    # Shuffle and split:
+    indices = np.random.permutation(len(X))
+    split = int(len(X) * (1 - test_size))
+    train_idx, test_idx = indices[:split], indices[split:]
+
+    # K-fold: split indices into k equal parts:
+    fold_size = n // k
+    folds = [indices[i*fold_size:(i+1)*fold_size] for i in range(k)]
+
+    # Confusion matrix:
+    TP = ((y_pred == 1) & (y_true == 1)).sum()
+    FP = ((y_pred == 1) & (y_true == 0)).sum()
 """
 
 import numpy as np

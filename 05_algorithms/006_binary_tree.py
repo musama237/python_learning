@@ -17,6 +17,24 @@ Hints:
     1. Insert: go left if value is smaller than current node, right if larger
     2. In-order traversal visits left subtree, then root, then right subtree
     3. Delete has three cases: leaf node (just remove), one child (replace with child), two children (replace with in-order successor or predecessor)
+
+Learn:
+    # Recursive insert:
+    def _insert(self, node, val):
+        if node is None:
+            return TreeNode(val)
+        if val < node.val:
+            node.left = self._insert(node.left, val)
+        else:
+            node.right = self._insert(node.right, val)
+        return node
+
+    # In-order traversal (left, root, right):
+    def _inorder(self, node, result):
+        if node:
+            self._inorder(node.left, result)
+            result.append(node.val)
+            self._inorder(node.right, result)
 """
 
 

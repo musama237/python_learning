@@ -10,6 +10,13 @@ Hints:
     2. pd.pivot_table() for reshaping data
     3. df['col'].rolling(window) for rolling statistics
     4. drop_duplicates, fillna, str.strip for cleaning
+
+Learn:
+    merged = pd.merge(orders, customers, on="customer_id", how="left")
+    pivot = pd.pivot_table(df, values="revenue", index="date", columns="product", aggfunc="sum", fill_value=0)
+    df["rolling_mean"] = df["value"].rolling(window=3).mean()
+    df = df.drop_duplicates()
+    df["col"] = df["col"].fillna(df["col"].median())
 """
 
 import pandas as pd

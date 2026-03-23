@@ -10,6 +10,22 @@ Hints:
     2. moving_average: np.convolve with np.ones(window)/window
     3. softmax: subtract max for stability then exp/sum
     4. euclidean: use broadcasting with (X[:,None,:] - X[None,:,:])
+
+Learn:
+    import numpy as np
+    # Vectorized operations (no loops):
+    arr = np.array([1, 2, 3])
+    arr * 2  # -> [2, 4, 6]
+    arr.min(), arr.max(), arr.mean()
+
+    # Softmax with stability trick:
+    x = x - x.max()  # subtract max for numerical stability
+    exp_x = np.exp(x)
+    softmax = exp_x / exp_x.sum()
+
+    # Broadcasting for pairwise distances:
+    diff = X[:, None, :] - X[None, :, :]  # (n, n, d)
+    dist = np.sqrt((diff**2).sum(axis=-1))  # (n, n)
 """
 
 import numpy as np

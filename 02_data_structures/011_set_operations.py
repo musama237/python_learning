@@ -13,6 +13,19 @@ Hints:
     1. For union, you need all unique elements from both lists combined.
     2. For intersection, an element must appear in both lists; for difference, only in the first.
     3. Build a result list by iterating and checking membership (use "in" to check if element exists in the other list), avoiding duplicates.
+
+Learn:
+    # Check if item is in a list:
+    3 in [1, 2, 3]  # -> True
+
+    # Avoiding duplicates with 'not in':
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+
+    # sorted() returns a new sorted list:
+    sorted([3, 1, 2])  # -> [1, 2, 3]
 """
 
 

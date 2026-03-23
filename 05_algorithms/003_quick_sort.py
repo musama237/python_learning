@@ -12,6 +12,14 @@ Hints:
     1. Pick a pivot element and partition the array into less-than, equal, and greater-than groups
     2. Recursively sort the less-than and greater-than groups
     3. Concatenate the three groups: sorted less + equal + sorted greater
+
+Learn:
+    # Partition using list comprehensions:
+    pivot = arr[-1]  # or arr[0], or random
+    less = [x for x in arr if x < pivot]
+    equal = [x for x in arr if x == pivot]
+    greater = [x for x in arr if x > pivot]
+    return quick_sort(less) + equal + quick_sort(greater)
 """
 
 

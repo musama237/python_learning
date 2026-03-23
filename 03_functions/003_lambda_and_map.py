@@ -9,6 +9,25 @@ Hints:
     1. Remember that map and filter return iterators in Python 3, not lists.
     2. Wrap map() and filter() calls in list(); filter keeps items where the lambda returns True; reduce needs an initial value to handle empty lists.
     3. For double_all: list(map(lambda x: x*2, nums)); for product_of_all: reduce(lambda a,b: a*b, nums, 1) -- the third arg to reduce is the initial value for empty lists.
+
+Learn:
+    # Lambda: anonymous one-line function:
+    double = lambda x: x * 2
+    double(5)  # -> 10
+
+    # map applies function to each element:
+    list(map(lambda x: x * 2, [1, 2, 3]))  # -> [2, 4, 6]
+
+    # filter keeps items where function returns True:
+    list(filter(lambda x: x > 0, [-1, 2, -3, 4]))  # -> [2, 4]
+
+    # reduce combines all elements:
+    from functools import reduce
+    reduce(lambda a, b: a + b, [1, 2, 3], 0)  # -> 6
+    # 0 is the initial value (important for empty lists!)
+
+    # sorted with key:
+    sorted(["hello", "hi"], key=lambda s: s[-1])
 """
 
 from functools import reduce

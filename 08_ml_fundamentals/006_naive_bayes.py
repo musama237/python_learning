@@ -9,6 +9,18 @@ Hints:
     1. P(class|X) is proportional to P(class) * product(P(x_i|class)) for each feature
     2. Use the Gaussian PDF for continuous features: (1/sqrt(2*pi*var)) * exp(-(x-mean)^2 / (2*var))
     3. Predict by taking argmax over classes of the log-posterior (use log to avoid underflow)
+
+Learn:
+    # Gaussian PDF:
+    def gaussian(x, mean, var):
+        return (1 / np.sqrt(2 * np.pi * var)) * np.exp(-(x - mean)**2 / (2 * var))
+
+    # Per-class statistics:
+    for c in classes:
+        mask = (y == c)
+        self.means[c] = X[mask].mean(axis=0)
+        self.vars[c] = X[mask].var(axis=0)
+        self.priors[c] = mask.sum() / len(y)
 """
 
 import numpy as np

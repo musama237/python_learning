@@ -18,6 +18,26 @@ Hints:
     1. Use @property for getter, @name.setter for setter
     2. Store internal value as _celsius
     3. Convert in fahrenheit property
+
+Learn:
+    # Property decorator (getter):
+    class Temp:
+        def __init__(self, c):
+            self._celsius = c  # underscore = "private"
+
+        @property
+        def celsius(self):
+            return self._celsius
+
+        @celsius.setter
+        def celsius(self, value):
+            if value < -273.15:
+                raise ValueError("Below absolute zero!")
+            self._celsius = value
+
+    t = Temp(100)
+    t.celsius      # calls getter -> 100
+    t.celsius = 50  # calls setter
 """
 
 

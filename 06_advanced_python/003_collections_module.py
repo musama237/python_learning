@@ -10,6 +10,13 @@ Hints:
     2. defaultdict(list) auto-creates empty lists on first access — great for grouping
     3. Use a deque to maintain a sliding window with O(1) append and popleft
     4. namedtuple creates a lightweight Point class with named x, y fields
+
+Learn:
+    from collections import Counter, defaultdict, deque, namedtuple
+    Counter("aab").most_common(1)  # -> [('a', 2)]
+    d = defaultdict(list); d["key"].append(1)  # auto-creates list
+    dq = deque([1,2,3]); dq.popleft()  # -> 1 (O(1))
+    Point = namedtuple("Point", ["x", "y"])
 """
 
 from collections import Counter, defaultdict, deque, namedtuple

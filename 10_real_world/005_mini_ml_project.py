@@ -17,6 +17,21 @@ Hints:
     2. preprocess: standardize with training mean/std
     3. evaluate: TP/FP/FN/TN from comparing predictions
     4. run: split, preprocess, train each model, evaluate, sort by F1
+
+Learn:
+    # Generate multi-scale data:
+    X = np.random.randn(n, features)
+    X[:, :3] *= 100    # some features large scale
+    X[:, 3:] *= 0.01   # some features small scale
+    y = (X[:, 0] + X[:, 1] * 2 > 0).astype(int)
+
+    # Evaluate metrics:
+    TP = ((pred == 1) & (true == 1)).sum()
+    FP = ((pred == 1) & (true == 0)).sum()
+    FN = ((pred == 0) & (true == 1)).sum()
+    precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+    recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
 """
 
 import numpy as np

@@ -13,6 +13,22 @@ Hints:
     1. Split the array in half recursively until each piece has 0 or 1 elements
     2. Merge two sorted halves by comparing their front elements
     3. Use two pointers, one for each half, advancing whichever points to the smaller element
+
+Learn:
+    # Split array in half:
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+
+    # Merge two sorted lists:
+    result, i, j = [], 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i]); i += 1
+        else:
+            result.append(right[j]); j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
 """
 
 

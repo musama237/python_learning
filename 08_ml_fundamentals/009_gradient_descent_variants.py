@@ -10,6 +10,20 @@ Hints:
     1. SGD: simply w -= lr * grad
     2. Momentum: maintain velocity v = momentum*v - lr*grad, then w += v
     3. Adam: track first moment (m) and second moment (v), apply bias correction, then update w -= lr * m_hat / (sqrt(v_hat) + epsilon)
+
+Learn:
+    # SGD: params -= lr * grads
+
+    # Momentum:
+    self.velocity = self.momentum * self.velocity - self.lr * grads
+    params = params + self.velocity
+
+    # Adam:
+    self.m = beta1 * self.m + (1 - beta1) * grads      # first moment
+    self.v = beta2 * self.v + (1 - beta2) * grads**2    # second moment
+    m_hat = self.m / (1 - beta1**self.t)                 # bias correction
+    v_hat = self.v / (1 - beta2**self.t)
+    params -= self.lr * m_hat / (np.sqrt(v_hat) + eps)
 """
 
 import numpy as np

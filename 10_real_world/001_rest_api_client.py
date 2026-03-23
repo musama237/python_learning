@@ -10,6 +10,27 @@ Hints:
     1. RateLimiter: store timestamps of calls, remove old ones, check count
     2. ResponseCache: store (value, expiry_time) tuples, check time.time() < expiry
     3. APIClient: loop with try/except and exponential backoff sleep(2**attempt * base_delay)
+
+Learn:
+    # Rate limiter with timestamps:
+    import time
+    self.calls = []
+    def acquire(self):
+        now = time.time()
+        self.calls = [t for t in self.calls if now - t < self.period]
+        if len(self.calls) < self.max_calls:
+            self.calls.append(now)
+            return True
+        return False
+
+    # Cache with TTL:
+    self.cache = {}  # key -> (value, expiry_time)
+    def get(self, key):
+        if key in self.cache:
+            value, expiry = self.cache[key]
+            if time.time() < expiry:
+                return value
+        return None
 """
 
 import json

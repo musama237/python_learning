@@ -9,6 +9,27 @@ Hints:
     1. Define layers in __init__ using nn.Linear and nn.ReLU; chain them in forward()
     2. Use nn.Sequential to build simple layer stacks without writing a custom forward()
     3. Use BCELoss for binary classification when output has a sigmoid activation
+
+Learn:
+    import torch.nn as nn
+    class Net(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.fc1 = nn.Linear(10, 32)
+            self.fc2 = nn.Linear(32, 1)
+        def forward(self, x):
+            x = torch.relu(self.fc1(x))
+            return torch.sigmoid(self.fc2(x))
+
+    # Training loop:
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+    loss_fn = nn.BCELoss()
+    for epoch in range(100):
+        pred = model(X)
+        loss = loss_fn(pred, y)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 """
 
 import torch

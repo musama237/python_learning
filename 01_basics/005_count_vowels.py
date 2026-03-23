@@ -12,6 +12,18 @@ Hints:
     1. How can you check if a character belongs to a set of characters? Think about the "in" operator.
     2. Convert the string to lowercase first so you only need to check against lowercase vowels "aeiou".
     3. Iterate through each character, check if it is in "aeiou" (after lowering), and keep a running count.
+
+Learn:
+    # Check membership with 'in':
+    "a" in "aeiou"  # -> True
+    "x" in "aeiou"  # -> False
+
+    # Convert to lowercase:
+    "Hello".lower()  # -> "hello"
+
+    # Iterate through characters of a string:
+    for char in "hello":
+        print(char)  # prints h, e, l, l, o
 """
 
 

@@ -16,6 +16,19 @@ Hints:
     1. The Euclidean algorithm repeatedly replaces the larger number — think about what operation reduces the problem.
     2. The key insight: gcd(a, b) = gcd(b, a % b). The process stops when b becomes 0, and a is the answer.
     3. Loop while b != 0: set a, b = b, a % b. When b is 0, return a.
+
+Learn:
+    # Euclidean algorithm step by step:
+    # gcd(48, 18):
+    #   48 % 18 = 12  -> gcd(18, 12)
+    #   18 % 12 = 6   -> gcd(12, 6)
+    #   12 % 6 = 0    -> gcd(6, 0) -> answer is 6
+
+    # While loop with multiple assignment:
+    a, b = 48, 18
+    while b != 0:
+        a, b = b, a % b
+    # a is now the GCD
 """
 
 

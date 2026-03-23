@@ -15,6 +15,20 @@ Hints:
     1. Each Fibonacci number depends on the two numbers before it — think about what state you need to track.
     2. Keep two variables for the previous two values. Handle edge cases for n=0 (empty list) and n=1 ([0]).
     3. Start a list with [0, 1], then loop from index 2 to n, appending the sum of the last two elements each time.
+
+Learn:
+    # Multiple assignment to track two values:
+    a, b = 0, 1
+    a, b = b, a + b  # a becomes 1, b becomes 1
+
+    # Building a list with append:
+    result = []
+    result.append(0)  # [0]
+    result.append(1)  # [0, 1]
+
+    # List slicing for edge cases:
+    [0, 1][:0]  # -> []  (first 0 elements)
+    [0, 1][:1]  # -> [0] (first 1 element)
 """
 
 

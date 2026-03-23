@@ -9,6 +9,20 @@ Hints:
     1. Use nn.Conv2d(in_channels, out_channels, kernel_size) for convolution layers
     2. nn.MaxPool2d(2) halves spatial dimensions; calculate flatten size as channels * H * W after all convolutions and pools
     3. For residual connections, add the input to the block output: output = relu(x + F(x))
+
+Learn:
+    # Conv2d: (batch, channels_in, H, W) -> (batch, channels_out, H, W)
+    nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)
+    nn.MaxPool2d(2)  # halves spatial dimensions
+
+    # Calculate size after conv+pool:
+    # 28x28 -> Conv(pad=1) -> 28x28 -> Pool(2) -> 14x14
+    # 14x14 -> Conv(pad=1) -> 14x14 -> Pool(2) -> 7x7
+    nn.Flatten()  # (batch, 32, 7, 7) -> (batch, 32*7*7)
+
+    # Residual connection:
+    out = self.conv2(torch.relu(self.conv1(x)))
+    return torch.relu(x + out)  # skip connection
 """
 
 import torch

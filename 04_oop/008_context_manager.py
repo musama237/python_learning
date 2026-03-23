@@ -16,6 +16,27 @@ Hints:
     1. __enter__ starts timer, returns self
     2. __exit__ computes elapsed
     3. SuppressErrors returns True from __exit__ to suppress
+
+Learn:
+    # Context manager protocol:
+    class MyContext:
+        def __enter__(self):
+            # setup code
+            return self
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            # cleanup code
+            return False  # True = suppress exception
+
+    # Timer pattern:
+    import time
+    self._start = time.time()       # in __enter__
+    self.elapsed = time.time() - self._start  # in __exit__
+
+    # Suppress specific exceptions:
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type in self.suppressed:
+            return True  # swallow exception
+        return False      # let it propagate
 """
 
 import time

@@ -9,6 +9,21 @@ Hints:
     1. Entropy is -sum(p * log2(p)) where p is the proportion of each class
     2. Try all features and all unique thresholds; pick the split with highest information gain
     3. Recurse on left/right subsets until max_depth is reached or the node is pure
+
+Learn:
+    # Entropy:
+    from collections import Counter
+    counts = Counter(y)
+    probs = [c / len(y) for c in counts.values()]
+    entropy = -sum(p * np.log2(p) for p in probs if p > 0)
+
+    # Information gain:
+    n = len(y)
+    ig = entropy(y) - (len(left)/n)*entropy(left) - (len(right)/n)*entropy(right)
+
+    # Tree node as dict:
+    {"feature": 0, "threshold": 2.5, "left": ..., "right": ...}
+    {"leaf": True, "value": most_common_class}
 """
 
 import numpy as np

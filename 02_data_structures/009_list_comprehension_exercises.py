@@ -12,6 +12,20 @@ Hints:
     1. List comprehensions follow the pattern: [expression for item in iterable].
     2. You can add an if-condition to filter, and nest for-loops to flatten.
     3. For filtering: [expr for x in iterable if condition]. For flattening 2D: [item for row in matrix for item in row].
+
+Learn:
+    # Basic list comprehension:
+    [x**2 for x in range(5)]  # -> [0, 1, 4, 9, 16]
+
+    # With condition (filter):
+    [x for x in range(10) if x % 2 == 0]  # -> [0, 2, 4, 6, 8]
+
+    # Nested (flatten 2D):
+    [[1,2],[3,4]]
+    [item for row in matrix for item in row]  # -> [1, 2, 3, 4]
+
+    # With transformation:
+    [len(w) for w in ["hi", "hello"]]  # -> [2, 5]
 """
 
 

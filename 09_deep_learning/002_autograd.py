@@ -9,6 +9,21 @@ Hints:
     1. Set requires_grad=True on tensors you want to differentiate with respect to
     2. Call .backward() on a scalar loss to compute gradients, then access them via the .grad attribute
     3. Use optimizer.zero_grad() before each backward pass to clear accumulated gradients
+
+Learn:
+    x = torch.tensor(2.0, requires_grad=True)
+    y = x ** 2
+    y.backward()       # compute gradient
+    x.grad             # -> tensor(4.0)  (dy/dx = 2x = 4)
+
+    # Gradient descent loop:
+    x = torch.tensor(0.0, requires_grad=True)
+    for _ in range(100):
+        loss = (x - 3) ** 2
+        loss.backward()
+        with torch.no_grad():
+            x -= lr * x.grad
+        x.grad.zero_()
 """
 
 import torch

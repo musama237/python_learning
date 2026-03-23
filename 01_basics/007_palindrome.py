@@ -15,6 +15,22 @@ Hints:
     1. Before comparing, you need to clean the string — remove non-alphanumeric characters and normalize case.
     2. Use str.isalnum() to filter characters and str.lower() to normalize. Then compare the cleaned string to its reverse.
     3. Build a cleaned string with only lowercase alphanumeric chars, then check if cleaned == cleaned[::-1].
+
+Learn:
+    # Check if character is alphanumeric:
+    "a".isalnum()  # -> True
+    " ".isalnum()  # -> False
+    ",".isalnum()  # -> False
+
+    # Build a cleaned string:
+    cleaned = ""
+    for ch in "A man!":
+        if ch.isalnum():
+            cleaned += ch.lower()
+    # cleaned -> "aman"
+
+    # Reverse a string with slicing:
+    "hello"[::-1]  # -> "olleh"
 """
 
 

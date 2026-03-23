@@ -14,6 +14,22 @@ Hints:
     1. Fixed window: add the new right element and remove the old left element as the window slides
     2. Variable window: expand right to include more; shrink left when the window condition breaks
     3. For minimum window substring, use a character frequency map and track how many required chars are satisfied
+
+Learn:
+    # Fixed window sum:
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    for i in range(k, len(arr)):
+        window_sum += arr[i] - arr[i - k]  # slide
+        max_sum = max(max_sum, window_sum)
+
+    # Variable window (two pointers):
+    left = 0
+    for right in range(len(s)):
+        # expand window
+        while condition_broken:
+            # shrink from left
+            left += 1
 """
 
 

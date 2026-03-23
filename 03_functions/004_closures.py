@@ -20,6 +20,27 @@ Hints:
     1. The inner function can "see" variables from the outer function's scope -- that's the closure.
     2. To modify a captured variable (like a counter), you need the nonlocal keyword or a mutable container like a list.
     3. For make_counter: use nonlocal to increment start (or a list [start]) inside the inner function; for make_multiplier: just return lambda x: x * factor.
+
+Learn:
+    # Closure: inner function remembers outer variables:
+    def outer():
+        x = 10
+        def inner():
+            return x  # 'x' is captured from outer scope
+        return inner
+
+    # nonlocal lets you MODIFY an outer variable:
+    def make_counter():
+        count = 0
+        def increment():
+            nonlocal count
+            count += 1
+            return count
+        return increment
+
+    c = make_counter()
+    c()  # -> 1
+    c()  # -> 2
 """
 
 

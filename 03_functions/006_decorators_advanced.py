@@ -19,6 +19,29 @@ Hints:
     1. retry needs a decorator factory (function returning a decorator); memoize needs a dict to remember previous results.
     2. For retry: loop max_attempts times with try/except, re-raise on the last attempt. For memoize: use a dict with args as key, store it on func.cache.
     3. retry: for i in range(max_attempts) try calling func, except on the last iteration re-raise. memoize: check if args in cache dict, if not compute and store, then return cached value.
+
+Learn:
+    # Decorator with arguments (decorator factory):
+    def repeat(n):                    # factory takes args
+        def decorator(func):          # actual decorator
+            def wrapper(*args, **kwargs):
+                for _ in range(n):
+                    func(*args, **kwargs)
+            return wrapper
+        return decorator
+
+    @repeat(3)
+    def say_hi():
+        print("hi")
+
+    # Memoization with a dict:
+    def memoize(func):
+        func.cache = {}
+        def wrapper(*args):
+            if args not in func.cache:
+                func.cache[args] = func(*args)
+            return func.cache[args]
+        return wrapper
 """
 
 

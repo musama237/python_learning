@@ -15,6 +15,22 @@ Hints:
     1. Compare the middle element to the target; go left half or right half accordingly
     2. For first/last occurrence, keep searching even after finding a match
     3. For first occurrence, when found move right boundary left; for last occurrence, move left boundary right
+
+Learn:
+    # Standard binary search:
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1    # search right half
+        else:
+            high = mid - 1   # search left half
+    return -1
+
+    # For first occurrence: when found, set high = mid - 1
+    # For last occurrence: when found, set low = mid + 1
 """
 
 

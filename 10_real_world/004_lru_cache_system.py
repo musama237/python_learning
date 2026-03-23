@@ -16,6 +16,24 @@ Hints:
     2. head=most recent, tail=least recent
     3. On get: move node to front
     4. On put: add to front, if over capacity remove from tail
+
+Learn:
+    # Doubly linked list operations:
+    # Remove node from middle:
+    node.prev.next = node.next
+    node.next.prev = node.prev
+
+    # Add node after head (most recent):
+    node.next = self.head.next
+    node.prev = self.head
+    self.head.next.prev = node
+    self.head.next = node
+
+    # Use sentinel head/tail to avoid None checks:
+    self.head = Node()  # dummy
+    self.tail = Node()  # dummy
+    self.head.next = self.tail
+    self.tail.prev = self.head
 """
 
 

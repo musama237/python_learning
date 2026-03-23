@@ -11,6 +11,19 @@ Hints:
     1. With @contextmanager, code before yield is setup and code after yield is teardown
     2. For transaction: copy the dict before yield, then restore original contents on exception
     3. For temp_workspace: use os.chdir to enter the temp dir, and chdir back in the finally block
+
+Learn:
+    from contextlib import contextmanager
+    @contextmanager
+    def managed():
+        print("setup")
+        try:
+            yield "value"  # code inside 'with' runs here
+        finally:
+            print("cleanup")
+
+    with managed() as val:
+        print(val)  # "value"
 """
 
 from contextlib import contextmanager

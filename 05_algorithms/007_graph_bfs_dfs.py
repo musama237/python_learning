@@ -19,6 +19,28 @@ Hints:
     1. BFS uses a queue (deque), DFS uses a stack (or recursion)
     2. Always track a visited set to avoid revisiting nodes in graphs with cycles
     3. For shortest path, track the parent of each node during BFS and reconstruct the path backward
+
+Learn:
+    # BFS with deque:
+    from collections import deque
+    queue = deque([start])
+    visited = {start}
+    while queue:
+        node = queue.popleft()
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+    # DFS with stack (iterative):
+    stack = [start]
+    visited = set()
+    while stack:
+        node = stack.pop()
+        if node not in visited:
+            visited.add(node)
+            for neighbor in graph[node]:
+                stack.append(neighbor)
 """
 
 from collections import deque

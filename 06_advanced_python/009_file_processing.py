@@ -9,6 +9,21 @@ Hints:
     1. Path.read_text().splitlines() gives you lines without reading line-by-line
     2. Use csv.DictReader to automatically map CSV rows to dicts using the header
     3. Path.rglob("*.txt") recursively finds all .txt files in a directory tree
+
+Learn:
+    from pathlib import Path
+    text = Path("file.txt").read_text()
+    lines = text.splitlines()
+
+    import csv
+    with open("data.csv") as f:
+        for row in csv.DictReader(f):
+            print(row["name"])  # access by column name
+
+    # Recursive file search:
+    for f in Path("dir").rglob("*.txt"):
+        if "pattern" in f.read_text():
+            print(f)
 """
 
 from pathlib import Path

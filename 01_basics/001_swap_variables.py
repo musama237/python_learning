@@ -12,6 +12,15 @@ Hints:
     1. Think about how Python handles multiple values on both sides of an assignment.
     2. Python can pack and unpack tuples in a single line — no temporary variable needed.
     3. Use simultaneous assignment: a, b = b, a — Python evaluates the right side fully before assigning.
+
+Learn:
+    # Tuple unpacking allows swapping without temp variable:
+    x, y = y, x
+
+    # Functions can return multiple values as a tuple:
+    def example():
+        return 10, 20
+    a, b = example()  # a=10, b=20
 """
 
 

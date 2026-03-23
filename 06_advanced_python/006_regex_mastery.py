@@ -10,6 +10,13 @@ Hints:
     2. Use capturing groups () to extract specific parts of a match
     3. re.sub with a callback or pattern is useful for replacements like masking credit cards
     4. Use (?i) flag or re.IGNORECASE for case-insensitive matching of repeated words
+
+Learn:
+    import re
+    re.match(r'^[a-z]+@[a-z]+\.[a-z]+$', email)  # full match
+    re.findall(r'\d{2}/\d{2}/\d{4}', text)  # find all dates
+    re.sub(r'([A-Z])', r'_\1', name).lower()  # camelToSnake
+    re.findall(r'\b(\w+)\s+\1\b', text, re.IGNORECASE)  # repeated words
 """
 
 import re

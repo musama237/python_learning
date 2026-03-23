@@ -17,6 +17,24 @@ Hints:
     1. Store callbacks in dict of {event: [callbacks]}
     2. emit iterates and calls each
     3. once wraps callback to auto-unsubscribe
+
+Learn:
+    # Store callbacks in a dict of lists:
+    from collections import defaultdict
+    self._listeners = defaultdict(list)
+
+    # Subscribe:
+    self._listeners["click"].append(callback)
+
+    # Emit:
+    for cb in self._listeners.get(event, []):
+        cb(*args, **kwargs)
+
+    # once: wrap callback to auto-remove:
+    def wrapper(*a, **kw):
+        callback(*a, **kw)
+        self.off(event, wrapper)
+    self.on(event, wrapper)
 """
 
 

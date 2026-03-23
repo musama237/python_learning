@@ -10,6 +10,23 @@ Hints:
     2. run() loops through steps passing data forward
     3. Wrap each step in try/except
     4. error_handler receives (exception, current_data) and returns recovery data
+
+Learn:
+    # Pipeline pattern:
+    class Pipeline:
+        def add_step(self, name, func):
+            self.steps.append(Step(name, func))
+            return self  # chaining
+        def run(self, data):
+            for step in self.steps:
+                try:
+                    data = step.func(data)
+                except Exception as e:
+                    if step.error_handler:
+                        data = step.error_handler(e, data)
+                    else:
+                        return PipelineResult(success=False, error=str(e))
+            return PipelineResult(success=True, data=data)
 """
 
 from typing import Any, Callable

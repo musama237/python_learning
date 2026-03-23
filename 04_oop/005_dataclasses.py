@@ -13,6 +13,31 @@ Hints:
     1. @dataclass auto-generates __init__
     2. field(default_factory=list) for mutable defaults
     3. __post_init__ for computed fields
+
+Learn:
+    from dataclasses import dataclass, field
+
+    @dataclass
+    class Point:
+        x: float
+        y: float
+
+        def distance(self):
+            return (self.x**2 + self.y**2)**0.5
+
+    # Mutable default with field():
+    @dataclass
+    class Student:
+        grades: list = field(default_factory=list)
+
+    # __post_init__ runs after auto-generated __init__:
+    @dataclass
+    class Item:
+        price: float
+        qty: int
+        total: float = field(init=False)
+        def __post_init__(self):
+            self.total = self.price * self.qty
 """
 
 from dataclasses import dataclass, field

@@ -17,6 +17,28 @@ Hints:
     1. __new__ in metaclass runs at class creation
     2. Add registry dict to base class
     3. Check methods for __doc__ attribute
+
+Learn:
+    # Metaclass: a class that creates classes:
+    class Meta(type):
+        def __new__(mcs, name, bases, namespace):
+            cls = super().__new__(mcs, name, bases, namespace)
+            # modify cls here
+            return cls
+
+    # Registry pattern:
+    if not hasattr(cls, 'registry'):
+        cls.registry = {}      # base class gets registry
+    else:
+        for base in bases:
+            if hasattr(base, 'registry'):
+                base.registry[name] = cls
+
+    # Check if callable has docstring:
+    for key, val in namespace.items():
+        if callable(val) and not key.startswith('_'):
+            if not val.__doc__:
+                raise TypeError(f"{key} needs a docstring")
 """
 
 

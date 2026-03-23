@@ -11,6 +11,15 @@ Hints:
     2. plt.imshow() for heatmap visualization
     3. plt.plot() for training curves
     4. fig.savefig(path) to save; always plt.close(fig) when done
+
+Learn:
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.hist(data, bins=30, alpha=0.7, label="Data")
+    ax.axvline(data.mean(), color='r', label="Mean")
+    ax.set_title("Title"); ax.legend(); ax.grid(True)
+    fig.savefig("plot.png", dpi=150, bbox_inches="tight")
+    plt.close(fig)
 """
 
 import matplotlib

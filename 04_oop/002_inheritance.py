@@ -15,6 +15,25 @@ Hints:
     1. Square.__init__ calls super().__init__(side, side)
     2. Circle uses math.pi
     3. ABC forces subclasses to implement methods
+
+Learn:
+    # Abstract base class:
+    from abc import ABC, abstractmethod
+    class Shape(ABC):
+        @abstractmethod
+        def area(self): pass  # subclasses MUST implement
+
+    # Inheritance:
+    class Rectangle(Shape):
+        def __init__(self, w, h):
+            self.w, self.h = w, h
+        def area(self):
+            return self.w * self.h
+
+    # super() calls parent __init__:
+    class Square(Rectangle):
+        def __init__(self, side):
+            super().__init__(side, side)
 """
 
 import math

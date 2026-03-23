@@ -17,6 +17,27 @@ Hints:
     1. Forward pass is simply X @ w + b
     2. Loss is mean((y_pred - y)^2); gradients are dw = X.T @ (y_pred - y) / n, db = mean(y_pred - y)
     3. Update weights with w -= lr * dw and bias with b -= lr * db each iteration
+
+Learn:
+    # Forward pass:
+    y_pred = X @ self.weights + self.bias
+
+    # MSE loss:
+    loss = np.mean((y_pred - y) ** 2)
+
+    # Gradients:
+    n = X.shape[0]
+    dw = (2 / n) * X.T @ (y_pred - y)
+    db = (2 / n) * np.sum(y_pred - y)
+
+    # Update:
+    self.weights -= self.lr * dw
+    self.bias -= self.lr * db
+
+    # R² score:
+    ss_res = np.sum((y_true - y_pred) ** 2)
+    ss_tot = np.sum((y_true - y_true.mean()) ** 2)
+    r2 = 1 - ss_res / ss_tot
 """
 
 import numpy as np

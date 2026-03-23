@@ -9,6 +9,19 @@ Hints:
     1. dt accessor for date parts (df.date.dt.year, .dt.month, etc.)
     2. resample().agg({'price': ['first','max','min','last']}) for OHLCV
     3. rolling mean +/- n*rolling std for anomaly detection
+
+Learn:
+    # Date features from datetime column:
+    df["year"] = df["date"].dt.year
+    df["is_weekend"] = df["date"].dt.dayofweek >= 5
+
+    # Resample OHLCV:
+    resampled = df.resample("1h").agg({"price": ["first","max","min","last"], "volume": "sum"})
+
+    # Anomaly detection:
+    rolling_mean = series.rolling(window).mean()
+    rolling_std = series.rolling(window).std()
+    anomalies = (series - rolling_mean).abs() > n_std * rolling_std
 """
 
 import pandas as pd

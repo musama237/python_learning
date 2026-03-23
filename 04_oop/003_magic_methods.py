@@ -19,6 +19,26 @@ Hints:
     1. Store components as tuple
     2. __add__ creates new Vector with zipped sums
     3. magnitude = sqrt(sum of squares)
+
+Learn:
+    # Operator overloading:
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    # zip pairs up elements:
+    list(zip([1, 2], [3, 4]))  # -> [(1, 3), (2, 4)]
+
+    # __rmul__ handles: 3 * vector (when 3 doesn't know how):
+    def __rmul__(self, scalar):
+        return self.__mul__(scalar)
+
+    # __repr__ for developer-friendly string:
+    def __repr__(self):
+        return f"Vector({', '.join(map(str, self.components))})"
+
+    # Magnitude: sqrt(x^2 + y^2 + z^2)
+    import math
+    math.sqrt(sum(c**2 for c in self.components))
 """
 
 

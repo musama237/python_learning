@@ -14,6 +14,24 @@ Hints:
     1. Kahn's algorithm: compute in-degree for each node; start with nodes that have in-degree 0
     2. Use a queue (BFS): process a node, reduce in-degree of its neighbors, enqueue any that reach 0
     3. If not all nodes are processed, a cycle exists — return empty list
+
+Learn:
+    # Compute in-degrees:
+    in_degree = {node: 0 for node in graph}
+    for node in graph:
+        for neighbor in graph[node]:
+            in_degree[neighbor] += 1
+
+    # Kahn's algorithm:
+    queue = deque([n for n in in_degree if in_degree[n] == 0])
+    result = []
+    while queue:
+        node = queue.popleft()
+        result.append(node)
+        for neighbor in graph[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
 """
 
 

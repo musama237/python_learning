@@ -15,6 +15,20 @@ Hints:
     1. Forward: apply weights+bias then activation layer by layer; use ReLU for hidden layers, sigmoid for output
     2. Backward: use the chain rule from the output layer back; delta = (a - y) for output, propagate through layers
     3. Clip sigmoid inputs and log arguments for numerical stability
+
+Learn:
+    # ReLU:
+    def relu(z): return np.maximum(0, z)
+    def relu_deriv(z): return (z > 0).astype(float)
+
+    # Forward pass:
+    z = X @ W + b       # linear
+    a = relu(z)          # activation
+
+    # Backprop chain rule:
+    dz = da * relu_deriv(z)  # activation gradient
+    dW = prev_activation.T @ dz / n
+    db = dz.mean(axis=0, keepdims=True)
 """
 
 import numpy as np

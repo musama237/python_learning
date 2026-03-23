@@ -16,6 +16,22 @@ Hints:
     1. Use threading.Lock() to protect shared state in the counter's increment/decrement
     2. ThreadPoolExecutor.map preserves input order — use it for parallel_map
     3. Use a Condition variable for the bounded queue to wait/notify on put and get
+
+Learn:
+    import threading
+    lock = threading.Lock()
+    with lock:
+        self._count += 1  # thread-safe
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        results = list(pool.map(func, data))  # preserves order
+
+    # Condition variable for producer/consumer:
+    cond = threading.Condition()
+    with cond:
+        cond.wait()    # block until notified
+        cond.notify()  # wake one waiter
 """
 
 import threading

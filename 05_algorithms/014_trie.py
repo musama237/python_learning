@@ -16,6 +16,22 @@ Hints:
     1. Each node has a children dict mapping char to TrieNode
     2. Insert: walk the trie creating nodes as needed; mark the last node as end-of-word
     3. Autocomplete: find the node at the end of the prefix, then DFS to collect all words below it
+
+Learn:
+    # Insert word into trie:
+    node = self.root
+    for char in word:
+        if char not in node.children:
+            node.children[char] = TrieNode()
+        node = node.children[char]
+    node.is_end = True
+
+    # DFS to collect all words below a node:
+    def _collect(self, node, prefix, results):
+        if node.is_end:
+            results.append(prefix)
+        for char, child in node.children.items():
+            self._collect(child, prefix + char, results)
 """
 
 

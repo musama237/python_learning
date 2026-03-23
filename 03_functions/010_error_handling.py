@@ -15,6 +15,26 @@ Hints:
     1. Wrap risky operations in try/except and return a safe default when things go wrong.
     2. Use isinstance() to check types before operating; raise your custom exceptions with descriptive messages for validation.
     3. safe_divide: try a/b, except (ZeroDivisionError, TypeError) return None. validate_age: check isinstance(value, int) first (raise TypeValidationError), then check 0 <= value <= 150 (raise RangeValidationError).
+
+Learn:
+    # try/except catches errors:
+    try:
+        result = 10 / 0
+    except ZeroDivisionError:
+        result = None
+
+    # Catch multiple exception types:
+    except (ValueError, TypeError):
+        pass
+
+    # Custom exceptions:
+    class MyError(Exception):
+        pass
+    raise MyError("something went wrong")
+
+    # isinstance for type checking:
+    isinstance(42, int)     # -> True
+    isinstance("hi", int)   # -> False
 """
 
 

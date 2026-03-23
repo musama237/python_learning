@@ -9,6 +9,17 @@ Hints:
     1. batch_dot: (A * B).sum(axis=1)
     2. one_hot: create zeros array, use fancy indexing to set 1s
     3. convolution: nested loops sliding kernel over image
+
+Learn:
+    # Element-wise multiply and sum:
+    (A * B).sum(axis=1)  # batch dot product
+
+    # One-hot encoding:
+    one_hot = np.zeros((n, num_classes))
+    one_hot[np.arange(n), labels] = 1  # fancy indexing
+
+    # Boolean mask with broadcasting:
+    result = image * mask[:, :, None]  # (H,W) -> (H,W,1)
 """
 
 import numpy as np

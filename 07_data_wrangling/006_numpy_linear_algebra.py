@@ -9,6 +9,22 @@ Hints:
     1. Matrix multiply: sum over shared dimension using broadcasting
     2. np.linalg.eigh for symmetric matrices
     3. PCA: center, covariance, eigendecompose, project onto top-k
+
+Learn:
+    # Matrix multiply with broadcasting:
+    result = (A[:, :, None] * B[None, :, :]).sum(axis=1)
+
+    # Or with loops:
+    for i in range(rows_A):
+        for j in range(cols_B):
+            result[i,j] = sum(A[i,k]*B[k,j] for k in range(cols_A))
+
+    # PCA steps:
+    X_centered = X - X.mean(axis=0)
+    cov = X_centered.T @ X_centered / (n - 1)
+    eigenvalues, eigenvectors = np.linalg.eigh(cov)
+    top_k = eigenvectors[:, -n_components:][:, ::-1]
+    X_pca = X_centered @ top_k
 """
 
 import numpy as np

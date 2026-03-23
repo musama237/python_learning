@@ -14,6 +14,27 @@ Hints:
     1. Think about tracking the current character and how many times it appears consecutively.
     2. Walk through the string keeping a current character and a count. When the character changes, append the char and count to your result.
     3. Build a compressed string by tracking runs of identical characters. After the loop, compare len(compressed) vs len(original) and return the shorter one.
+
+Learn:
+    # Tracking consecutive characters:
+    s = "aaabb"
+    current = s[0]  # 'a'
+    count = 1
+    for char in s[1:]:     # iterate from 2nd char
+        if char == current:
+            count += 1
+        else:
+            # char changed, process current run
+            current = char
+            count = 1
+
+    # f-string formatting:
+    f"{char}{count}"  # e.g., "a3"
+
+    # Compare lengths:
+    compressed = "a3b2"
+    original = "aaabb"
+    shorter = compressed if len(compressed) < len(original) else original
 """
 
 

@@ -17,6 +17,20 @@ Hints:
     1. A queue is FIFO — first in, first out. Think about which end to add and which to remove.
     2. A list can work: append() to enqueue at the end, pop(0) to dequeue from the front.
     3. Store items in a list; use append for enqueue, pop(0) for dequeue, [0] for peek, and raise IndexError when empty. For better performance, consider collections.deque.
+
+Learn:
+    # List as a queue (simple but slow dequeue):
+    queue = []
+    queue.append(1)   # enqueue: [1]
+    queue.append(2)   # enqueue: [1, 2]
+    queue[0]           # peek: 1 (first element)
+    queue.pop(0)       # dequeue: returns 1, queue is [2]
+
+    # collections.deque is faster:
+    from collections import deque
+    q = deque()
+    q.append(1)       # enqueue
+    q.popleft()        # dequeue (O(1) instead of O(n))
 """
 
 

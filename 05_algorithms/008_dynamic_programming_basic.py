@@ -16,6 +16,23 @@ Hints:
     1. Climbing stairs: dp[i] = dp[i-1] + dp[i-2] (like Fibonacci)
     2. Coin change: dp[amount] = min(dp[amount - coin] + 1) for each coin
     3. LCS: build a 2D table where matching characters extend the diagonal value by 1
+
+Learn:
+    # DP with array (climbing stairs):
+    dp = [0] * (n + 1)
+    dp[0], dp[1] = 1, 1
+    for i in range(2, n + 1):
+        dp[i] = dp[i-1] + dp[i-2]
+
+    # Coin change DP:
+    dp = [float('inf')] * (amount + 1)
+    dp[0] = 0
+    for coin in coins:
+        for x in range(coin, amount + 1):
+            dp[x] = min(dp[x], dp[x - coin] + 1)
+
+    # 2D DP table (LCS):
+    dp = [[0] * (m+1) for _ in range(n+1)]
 """
 
 

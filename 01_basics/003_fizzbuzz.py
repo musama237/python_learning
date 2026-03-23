@@ -16,6 +16,19 @@ Hints:
     1. The order in which you check divisibility matters — what happens with numbers divisible by both 3 and 5?
     2. Check divisibility by 15 (or both 3 and 5) first, then by 3, then by 5, then default to the number as a string.
     3. Loop from 1 to n, build a result list, and append the appropriate string for each number based on the divisibility checks.
+
+Learn:
+    # Check divisibility with modulo:
+    if n % 3 == 0:   # n is divisible by 3
+    if n % 15 == 0:  # n is divisible by both 3 and 5
+
+    # Building a list in a loop:
+    result = []
+    for i in range(1, 6):
+        result.append(str(i))
+
+    # Convert int to string:
+    str(42)  # -> "42"
 """
 
 

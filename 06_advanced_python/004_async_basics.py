@@ -13,6 +13,18 @@ Hints:
     1. Use await asyncio.sleep(delay) to simulate an async operation
     2. asyncio.gather(*coroutines) runs multiple coroutines concurrently and returns results in order
     3. For retry: loop with try/except, await asyncio.sleep between attempts, re-raise on final failure
+
+Learn:
+    import asyncio
+    async def fetch(url, delay):
+        await asyncio.sleep(delay)  # non-blocking sleep
+        return {"url": url, "status": 200}
+
+    # Run multiple coroutines in parallel:
+    results = await asyncio.gather(fetch("a", 0.1), fetch("b", 0.1))
+
+    # Main entry point:
+    asyncio.run(main())
 """
 
 import asyncio

@@ -16,6 +16,20 @@ Hints:
     1. Store the heap as an array: parent at i//2, children at 2*i+1 and 2*i+2
     2. Push: append to end and bubble up by swapping with parent while smaller
     3. Pop: swap root with last element, remove last, then bubble down the new root
+
+Learn:
+    # Heap as array — parent/child relationships:
+    parent = (i - 1) // 2
+    left_child = 2 * i + 1
+    right_child = 2 * i + 2
+
+    # Bubble up (after push):
+    while i > 0 and self.data[i] < self.data[(i-1)//2]:
+        self.data[i], self.data[(i-1)//2] = self.data[(i-1)//2], self.data[i]
+        i = (i - 1) // 2
+
+    # Bubble down (after pop):
+    # Compare with smaller child, swap if needed
 """
 
 

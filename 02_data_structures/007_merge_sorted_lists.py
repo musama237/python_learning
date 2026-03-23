@@ -12,6 +12,21 @@ Hints:
     1. Since both lists are already sorted, you can build the result in one pass.
     2. Use two pointers (indices), one for each list, and always take the smaller front element.
     3. Compare lst1[i] and lst2[j]; append the smaller one and advance that pointer. After the loop, append any remaining elements.
+
+Learn:
+    # Two-pointer technique:
+    i, j = 0, 0
+    while i < len(lst1) and j < len(lst2):
+        if lst1[i] <= lst2[j]:
+            result.append(lst1[i])
+            i += 1
+        else:
+            result.append(lst2[j])
+            j += 1
+
+    # Append remaining elements:
+    result.extend(lst1[i:])  # any remaining from lst1
+    result.extend(lst2[j:])  # any remaining from lst2
 """
 
 

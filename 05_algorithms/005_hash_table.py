@@ -15,6 +15,21 @@ Hints:
     1. Use hash(key) % capacity to compute the bucket index
     2. Each bucket is a list of (key, value) pairs to handle collisions via chaining
     3. On put, scan the bucket for an existing key to update; otherwise append a new pair
+
+Learn:
+    # Hash to bucket index:
+    index = hash(key) % self.capacity
+
+    # Chaining: each bucket is a list of pairs:
+    self.buckets = [[] for _ in range(capacity)]
+
+    # Put: search bucket, update or append:
+    bucket = self.buckets[index]
+    for i, (k, v) in enumerate(bucket):
+        if k == key:
+            bucket[i] = (key, value)  # update
+            return
+    bucket.append((key, value))  # new entry
 """
 
 

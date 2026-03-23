@@ -15,6 +15,18 @@ Hints:
     1. Think about repeated multiplication — or a function that calls itself with a smaller problem.
     2. Iterative: multiply a running result by each number from 1 to n. Recursive: n! = n * (n-1)! with base case 0! = 1.
     3. Start result = 1, loop i from 1 to n inclusive, multiply result *= i each step. Return result.
+
+Learn:
+    # Accumulating a product:
+    result = 1
+    for i in range(1, 4):
+        result *= i  # 1*1=1, 1*2=2, 2*3=6
+
+    # Recursive approach:
+    def factorial(n):
+        if n == 0:       # base case
+            return 1
+        return n * factorial(n - 1)  # recursive call
 """
 
 

@@ -16,6 +16,23 @@ Hints:
     1. to_json: json.dumps(self.__dict__)
     2. from_json: create instance and set attributes
     3. ComparableMixin uses self.key() for comparisons
+
+Learn:
+    # Mixin: a class that adds behavior:
+    import json
+    class JsonMixin:
+        def to_json(self):
+            return json.dumps(self.__dict__)
+
+        @classmethod
+        def from_json(cls, s):
+            obj = cls.__new__(cls)       # create without __init__
+            obj.__dict__ = json.loads(s)  # restore attributes
+            return obj
+
+    # Comparison mixin:
+    def __lt__(self, other):
+        return self.key() < other.key()
 """
 
 import json

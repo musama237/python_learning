@@ -9,6 +9,21 @@ Hints:
     1. StandardScaler: (X - mean) / std; store mean and std from fit for transform and inverse_transform
     2. MinMaxScaler: (X - min) / (max - min); store min and max from fit
     3. Polynomial features: use itertools.combinations_with_replacement on column indices for all degree combinations
+
+Learn:
+    # StandardScaler:
+    self.mean = X.mean(axis=0)
+    self.std = X.std(axis=0)
+    X_scaled = (X - self.mean) / self.std
+
+    # MinMaxScaler:
+    self.min = X.min(axis=0)
+    self.max = X.max(axis=0)
+    X_scaled = (X - self.min) / (self.max - self.min)
+
+    # Polynomial features:
+    from itertools import combinations_with_replacement
+    combos = combinations_with_replacement(range(n_features), degree)
 """
 
 import numpy as np

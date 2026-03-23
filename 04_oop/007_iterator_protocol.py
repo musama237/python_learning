@@ -17,6 +17,26 @@ Hints:
     1. __iter__ returns self or a new iterator
     2. __next__ returns next value or raises StopIteration
     3. Range: track current position
+
+Learn:
+    # Iterator protocol: __iter__ + __next__
+    class Counter:
+        def __init__(self, n):
+            self.n = n
+            self.current = 0
+        def __iter__(self):
+            return self  # iterator returns itself
+        def __next__(self):
+            if self.current >= self.n:
+                raise StopIteration
+            val = self.current
+            self.current += 1
+            return val
+
+    list(Counter(3))  # -> [0, 1, 2]
+
+    # Cycle: use modulo index
+    self.index = (self.index + 1) % len(self.items)
 """
 
 

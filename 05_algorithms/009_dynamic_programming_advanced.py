@@ -14,6 +14,21 @@ Hints:
     1. Knapsack: build a 2D table dp[item][capacity] deciding to include or skip each item
     2. LIS: dp[i] = length of longest increasing subsequence ending at index i; check all j < i
     3. Edit distance: build a 2D table where each cell considers insert, delete, or replace operations
+
+Learn:
+    # 0/1 Knapsack:
+    dp = [[0] * (capacity + 1) for _ in range(len(weights) + 1)]
+    for i in range(1, len(weights) + 1):
+        for w in range(capacity + 1):
+            dp[i][w] = dp[i-1][w]  # skip item
+            if weights[i-1] <= w:
+                dp[i][w] = max(dp[i][w],
+                    dp[i-1][w - weights[i-1]] + values[i-1])
+
+    # Edit distance: dp[i][j] = min of 3 operations
+    # insert: dp[i][j-1] + 1
+    # delete: dp[i-1][j] + 1
+    # replace: dp[i-1][j-1] + (0 if match else 1)
 """
 
 

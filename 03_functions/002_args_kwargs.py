@@ -15,6 +15,21 @@ Hints:
     1. Consider what built-in function can add up a collection of numbers, and what kwargs already is.
     2. sum() works directly on the args tuple; kwargs is already a dict you can return as-is.
     3. Return a tuple of (sum(args), kwargs) -- that handles empty args (sum returns 0) and empty kwargs (empty dict).
+
+Learn:
+    # *args collects positional args as a tuple:
+    def f(*args):
+        print(args)  # (1, 2, 3)
+    f(1, 2, 3)
+
+    # **kwargs collects keyword args as a dict:
+    def f(**kwargs):
+        print(kwargs)  # {"name": "Alice", "age": 30}
+    f(name="Alice", age=30)
+
+    # sum() works on tuples:
+    sum((1, 2, 3))  # -> 6
+    sum(())          # -> 0
 """
 
 

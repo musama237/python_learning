@@ -14,6 +14,27 @@ Hints:
     1. FakeWeatherService: store the data dict and return values from it in get_temperature
     2. WeatherAdvisor: get the temperature then use if/elif thresholds to pick advice
     3. SimpleTestRunner: wrap each test call in try/except AssertionError to catch failures
+
+Learn:
+    # Dependency injection:
+    class Advisor:
+        def __init__(self, service):  # inject dependency
+            self.service = service
+
+    # Test double:
+    class FakeService:
+        def __init__(self, data):
+            self.data = data
+        def get(self, key):
+            return self.data[key]
+
+    # Simple test runner:
+    try:
+        test_func()
+        passed += 1
+    except AssertionError as e:
+        failed += 1
+        errors.append(str(e))
 """
 
 

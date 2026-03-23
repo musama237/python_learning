@@ -13,6 +13,14 @@ Hints:
     1. What does the remainder of a division tell you about a number?
     2. The modulo operator (%) gives the remainder — even numbers have remainder 0 when divided by 2.
     3. Check if n % 2 == 0 and return "even" or "odd" accordingly.
+
+Learn:
+    # Modulo operator gives the remainder:
+    7 % 2   # -> 1 (odd)
+    4 % 2   # -> 0 (even)
+
+    # Conditional expression (ternary):
+    result = "yes" if condition else "no"
 """
 
 

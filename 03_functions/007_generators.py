@@ -16,6 +16,27 @@ Hints:
     1. Use yield instead of return -- each yield produces the next value in the sequence.
     2. For fibonacci, keep two variables a, b and yield a, then update a, b = b, a+b. For chunked, slice the list in steps of n.
     3. fib: while True: yield a; a, b = b, a+b (start with a=0, b=1). chunked: for i in range(0, len(lst), n): yield lst[i:i+n]. primes: loop from 2 to limit, check divisibility.
+
+Learn:
+    # yield makes a function a generator:
+    def count_up(n):
+        i = 0
+        while i < n:
+            yield i    # pauses here, returns i
+            i += 1     # resumes here on next call
+
+    list(count_up(3))  # -> [0, 1, 2]
+
+    # Infinite generator:
+    def forever():
+        i = 0
+        while True:
+            yield i
+            i += 1
+
+    # Use islice to take from infinite generator:
+    from itertools import islice
+    list(islice(forever(), 5))  # -> [0, 1, 2, 3, 4]
 """
 
 from itertools import islice
