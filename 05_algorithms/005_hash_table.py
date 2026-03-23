@@ -1,0 +1,90 @@
+"""
+Challenge: Hash Table from Scratch
+Difficulty: ⭐⭐⭐ Hard
+Topic: Data Structures, Hashing, Collision Resolution
+
+Implement a hash table with chaining for collision resolution.
+Support: put, get, delete, contains, keys, values, len.
+
+Example:
+    ht = HashTable()
+    ht.put("name", "Alice")
+    ht.get("name") -> "Alice"
+"""
+
+
+class HashTable:
+    def __init__(self, capacity: int = 16):
+        # YOUR CODE HERE
+        pass
+
+    def _hash(self, key) -> int:
+        """Hash function to map key to bucket index."""
+        # YOUR CODE HERE
+        pass
+
+    def put(self, key, value) -> None:
+        """Insert or update key-value pair."""
+        # YOUR CODE HERE
+        pass
+
+    def get(self, key, default=None):
+        """Get value by key. Return default if not found."""
+        # YOUR CODE HERE
+        pass
+
+    def delete(self, key) -> None:
+        """Delete key. Raise KeyError if not found."""
+        # YOUR CODE HERE
+        pass
+
+    def contains(self, key) -> bool:
+        # YOUR CODE HERE
+        pass
+
+    def keys(self) -> list:
+        # YOUR CODE HERE
+        pass
+
+    def values(self) -> list:
+        # YOUR CODE HERE
+        pass
+
+    def __len__(self) -> int:
+        # YOUR CODE HERE
+        pass
+
+
+# --- Tests (do not modify) ---
+if __name__ == "__main__":
+    ht = HashTable()
+    assert len(ht) == 0
+
+    ht.put("name", "Alice")
+    ht.put("age", 30)
+    assert ht.get("name") == "Alice"
+    assert ht.get("age") == 30
+    assert len(ht) == 2
+    assert ht.contains("name") is True
+    assert ht.contains("xyz") is False
+
+    ht.put("name", "Bob")  # Update
+    assert ht.get("name") == "Bob"
+    assert len(ht) == 2
+
+    ht.delete("age")
+    assert ht.get("age") is None
+    assert len(ht) == 1
+
+    try:
+        ht.delete("nonexistent")
+        assert False
+    except KeyError:
+        pass
+
+    # Test with many keys (collision test)
+    for i in range(100):
+        ht.put(f"key_{i}", i)
+    for i in range(100):
+        assert ht.get(f"key_{i}") == i
+    print("✅ All tests passed!")

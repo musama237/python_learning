@@ -1,0 +1,48 @@
+"""
+Challenge: Dynamic Programming - Advanced
+Difficulty: ⭐⭐⭐ Hard
+Topic: DP, Knapsack, Subsequences
+
+1. 0/1 Knapsack problem
+2. Longest increasing subsequence
+3. Edit distance (Levenshtein distance)
+
+Example:
+    knapsack(capacity=7, weights=[1,3,4,5], values=[1,4,5,7]) -> 9
+"""
+
+
+def knapsack(capacity: int, weights: list[int], values: list[int]) -> int:
+    """0/1 Knapsack: maximize value without exceeding capacity."""
+    # YOUR CODE HERE
+    pass
+
+
+def longest_increasing_subsequence(arr: list[int]) -> int:
+    """Return LENGTH of longest strictly increasing subsequence."""
+    # YOUR CODE HERE
+    pass
+
+
+def edit_distance(s1: str, s2: str) -> int:
+    """Minimum edit operations (insert, delete, replace) to convert s1 to s2."""
+    # YOUR CODE HERE
+    pass
+
+
+# --- Tests (do not modify) ---
+if __name__ == "__main__":
+    assert knapsack(7, [1, 3, 4, 5], [1, 4, 5, 7]) == 9
+    assert knapsack(0, [1, 2], [10, 20]) == 0
+    assert knapsack(10, [5, 5, 5], [10, 20, 30]) == 50
+
+    assert longest_increasing_subsequence([10, 22, 9, 33, 21, 50, 41, 60]) == 5
+    assert longest_increasing_subsequence([3, 2, 1]) == 1
+    assert longest_increasing_subsequence([1, 2, 3]) == 3
+    assert longest_increasing_subsequence([]) == 0
+
+    assert edit_distance("kitten", "sitting") == 3
+    assert edit_distance("", "abc") == 3
+    assert edit_distance("abc", "abc") == 0
+    assert edit_distance("horse", "ros") == 3
+    print("✅ All tests passed!")

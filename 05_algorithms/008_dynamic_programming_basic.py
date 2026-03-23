@@ -1,0 +1,51 @@
+"""
+Challenge: Dynamic Programming - Basics
+Difficulty: ⭐⭐ Medium
+Topic: DP, Memoization, Tabulation
+
+Solve classic DP problems:
+1. Climbing stairs (1 or 2 steps at a time)
+2. Coin change (minimum coins)
+3. Longest common subsequence
+
+Example:
+    climb_stairs(5) -> 8
+    coin_change([1, 5, 10], 11) -> 2 (10+1)
+"""
+
+
+def climb_stairs(n: int) -> int:
+    """How many distinct ways to climb n stairs (1 or 2 steps at a time)?"""
+    # YOUR CODE HERE
+    pass
+
+
+def coin_change(coins: list[int], amount: int) -> int:
+    """Minimum number of coins to make amount. Return -1 if impossible."""
+    # YOUR CODE HERE
+    pass
+
+
+def longest_common_subsequence(s1: str, s2: str) -> int:
+    """Return length of longest common subsequence."""
+    # YOUR CODE HERE
+    pass
+
+
+# --- Tests (do not modify) ---
+if __name__ == "__main__":
+    assert climb_stairs(1) == 1
+    assert climb_stairs(2) == 2
+    assert climb_stairs(5) == 8
+    assert climb_stairs(10) == 89
+
+    assert coin_change([1, 5, 10], 11) == 2
+    assert coin_change([2], 3) == -1
+    assert coin_change([1], 0) == 0
+    assert coin_change([1, 2, 5], 11) == 3
+
+    assert longest_common_subsequence("abcde", "ace") == 3
+    assert longest_common_subsequence("abc", "def") == 0
+    assert longest_common_subsequence("abc", "abc") == 3
+    assert longest_common_subsequence("", "abc") == 0
+    print("✅ All tests passed!")
